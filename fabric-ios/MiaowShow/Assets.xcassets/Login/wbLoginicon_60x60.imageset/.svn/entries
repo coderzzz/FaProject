@@ -1,0 +1,68 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Login/wbLoginicon_60x60.imageset
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+wbLoginicon_60x60.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+c14c757aa9539adac8238993294c452c
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+Contents.json
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+47a2f972a5f104cb228c5e2c8af649dd
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+wbLoginicon_60x60@2x.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+e66aca0ff71b8f5c78001ab985295ba0
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+wbLoginicon_60x60@3x.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+96fd858066d8e5f979a61da9e1f620b3
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+

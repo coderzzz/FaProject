@@ -1,0 +1,43 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, "8.0"
+
+target 'Farbic' do
+
+pod 'pili-librtmp','1.0.3'
+
+pod 'AFNetworking', '3.1.0'
+pod 'SDWebImage', '3.8.1'
+pod 'MJRefresh', '3.1.10'
+pod 'MJExtension', '3.0.11'
+pod 'Masonry', '~> 1.0.1'
+pod 'MBProgressHUD', '0.9.2'
+pod 'BarrageRenderer', '1.8.0'
+#pod 'GPUImage', '~> 0.1.7' 由于LFLiveKit里面已经集成了GPUImage
+pod 'LFLiveKit', '1.6'
+
+pod 'UMengUShare/UI'
+
+# 集成微信(精简版0.2M)
+pod 'UMengUShare/Social/ReducedWeChat'
+
+# 集成微信(完整版14.4M)
+pod 'UMengUShare/Social/WeChat'
+
+# 集成QQ/QZone/TIM(精简版0.5M)
+pod 'UMengUShare/Social/ReducedQQ'
+
+# 集成QQ/QZone/TIM(完整版7.6M)
+pod 'UMengUShare/Social/QQ'
+
+# 集成新浪微博(精简版1M)
+pod 'UMengUShare/Social/ReducedSina'
+pod 'MWPhotoBrowser', '~> 2.1.2'
+pod 'BlocksKit', '2.2.5'
+pod 'libextobjc', '0.4.1'
+pod 'SDCycleScrollView'
+pod 'SocketRocket'
+pod 'IQKeyboardManager', '~> 3.3.7'
+
+pod 'WYPopoverController', '~> 0.2.0'
+
+end

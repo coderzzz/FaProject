@@ -1,0 +1,68 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Live
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+icon_beautifulface_19x19.imageset
+dir
+
+talk_private_40x40.imageset
+dir
+
+private_bg_375x229.imageset
+dir
+
+talk_rank_40x40.imageset
+dir
+
+user_close_15x15.imageset
+dir
+
+private_icon_70x70.imageset
+dir
+
+Contents.json
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+31cc68f34934a99c0b0c1bebde56309c
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+talk_public_40x40.imageset
+dir
+
+level
+dir
+
+camera_change_40x40.imageset
+dir
+
+public_catEar_98x25.imageset
+dir
+
+talk_share_40x40.imageset
+dir
+
+talk_sendgift_40x40.imageset
+dir
+
+talk_close_40x40.imageset
+dir
+

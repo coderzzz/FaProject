@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="head" id="U6b-Vx-4bR" customClass="AreaHeadView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J87-v4-egi">
+                    <rect key="frame" x="279" y="1" width="41" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="5XB-om-lUd"/>
+                        <constraint firstAttribute="width" constant="41" id="o0n-YQ-WeF"/>
+                    </constraints>
+                    <state key="normal" image="退出-1"/>
+                    <connections>
+                        <action selector="action:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="kIi-AB-Yjv"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT7-xg-9vm">
+                    <rect key="frame" x="0.0" y="39" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="V3b-Bq-OQx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHc-QU-wxo">
+                    <rect key="frame" x="16" y="10" width="102" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="J87-v4-egi" secondAttribute="bottom" id="0NG-Gl-CgX"/>
+                <constraint firstItem="J87-v4-egi" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="1" id="AdK-Lh-XTx"/>
+                <constraint firstAttribute="trailing" secondItem="iT7-xg-9vm" secondAttribute="trailing" id="BsG-uH-ycg"/>
+                <constraint firstAttribute="bottom" secondItem="iT7-xg-9vm" secondAttribute="bottom" id="kVx-Uq-6AO"/>
+                <constraint firstAttribute="trailing" secondItem="J87-v4-egi" secondAttribute="trailing" id="tbf-8P-eS3"/>
+                <constraint firstItem="iT7-xg-9vm" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="thM-I2-mfs"/>
+            </constraints>
+            <connections>
+                <outlet property="btn" destination="J87-v4-egi" id="Jci-RO-mGz"/>
+                <outlet property="lab" destination="EHc-QU-wxo" id="Vze-2L-5T4"/>
+            </connections>
+            <point key="canvasLocation" x="-131" y="7"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="退出-1" width="14" height="14"/>
+    </resources>
+</document>

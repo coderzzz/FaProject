@@ -1,0 +1,68 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Nav/head_crown_24x24.imageset
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+head_crown_24x24.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+d1b36e1a77ac72f5e0142677601addca
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+Contents.json
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+3335e233fa4517880387aa22fde28714
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+head_crown_24x24@2x.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+3000ba197128b55005d4bd939d04e456
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+head_crown_24x24@3x.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+6d88cf44009bb86cc2da0b5b1f07338a
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+

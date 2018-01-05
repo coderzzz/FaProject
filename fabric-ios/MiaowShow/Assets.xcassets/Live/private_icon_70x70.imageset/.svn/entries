@@ -1,0 +1,55 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Live/private_icon_70x70.imageset
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+private_icon_70x70_@2x.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+b49175dba1d5d7811220d67337d36b20
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+private_icon_70x70_@3x.png
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+8aba309483378d31472e30fdabfa06bc
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+Contents.json
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+10fcbc9856f9d6a583b49335632a191b
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+

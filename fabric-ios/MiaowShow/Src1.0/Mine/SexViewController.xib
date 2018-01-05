@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SexViewController">
+            <connections>
+                <outlet property="btn" destination="TWN-j9-VdW" id="ZcJ-L6-ENZ"/>
+                <outlet property="tableView" destination="XET-Cm-hDo" id="DsM-yD-Bap"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XET-Cm-hDo">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="237"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Pha-hz-L4D"/>
+                        <outlet property="delegate" destination="-1" id="1hk-zA-WCP"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWN-j9-VdW">
+                    <rect key="frame" x="85" y="261" width="150" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Kcw-1Z-G49"/>
+                        <constraint firstAttribute="width" constant="150" id="LBB-Ej-3YL"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="NnI-n9-SXE"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="SNE-2o-w52"/>
+                        <constraint firstAttribute="height" constant="35" id="r4E-dP-8Kz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="修改">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="JxA-TT-7Gh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XET-Cm-hDo" secondAttribute="trailing" id="FDH-L3-qD7"/>
+                <constraint firstItem="XET-Cm-hDo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NuP-8g-Rew"/>
+                <constraint firstAttribute="bottom" secondItem="XET-Cm-hDo" secondAttribute="bottom" constant="267" id="Use-j8-Vdr"/>
+                <constraint firstItem="TWN-j9-VdW" firstAttribute="top" secondItem="XET-Cm-hDo" secondAttribute="bottom" constant="24" id="c1z-p4-LaF"/>
+                <constraint firstItem="XET-Cm-hDo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jBI-xK-8WD"/>
+                <constraint firstItem="TWN-j9-VdW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="t1p-vc-iPt"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+        </view>
+    </objects>
+</document>

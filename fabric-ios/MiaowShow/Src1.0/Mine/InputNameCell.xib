@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="in" id="KGk-i7-Jjw" customClass="InputNameCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXP-CW-jR3">
+                        <rect key="frame" x="18" y="11" width="35.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5au-Kx-lr4">
+                        <rect key="frame" x="67" y="7" width="175" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="sWy-K1-nmz"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VXP-CW-jR3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2jk-hz-6Vu"/>
+                    <constraint firstItem="5au-Kx-lr4" firstAttribute="leading" secondItem="VXP-CW-jR3" secondAttribute="trailing" constant="13.5" id="7vF-Ff-N76"/>
+                    <constraint firstItem="5au-Kx-lr4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="Fdb-ma-DWY"/>
+                    <constraint firstItem="VXP-CW-jR3" firstAttribute="centerY" secondItem="5au-Kx-lr4" secondAttribute="centerY" id="Y3E-mB-FRc"/>
+                    <constraint firstItem="VXP-CW-jR3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="b1T-Zu-fun"/>
+                    <constraint firstItem="VXP-CW-jR3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="vfg-US-ocH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5au-Kx-lr4" secondAttribute="trailing" constant="70" id="ySm-dI-32B"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tf" destination="5au-Kx-lr4" id="CfH-ma-97d"/>
+                <outlet property="titlab" destination="VXP-CW-jR3" id="Hqc-jW-BBW"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

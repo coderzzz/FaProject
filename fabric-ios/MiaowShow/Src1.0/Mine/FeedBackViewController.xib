@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedBackViewController">
+            <connections>
+                <outlet property="phoneTF" destination="XSM-cW-gRC" id="1d3-4N-znD"/>
+                <outlet property="textView" destination="phs-j4-YM5" id="tPl-Rg-6n8"/>
+                <outlet property="uploadBtn" destination="DJB-Bo-hhq" id="VfP-55-pKF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqn-6A-yjd">
+                    <rect key="frame" x="0.0" y="9" width="320" height="180"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="phs-j4-YM5">
+                            <rect key="frame" x="8" y="0.0" width="304" height="180"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="X2l-ZC-qZ4"/>
+                            </connections>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="phs-j4-YM5" secondAttribute="bottom" id="BLo-C0-JLU"/>
+                        <constraint firstItem="phs-j4-YM5" firstAttribute="top" secondItem="Rqn-6A-yjd" secondAttribute="top" id="dNo-0h-rEc"/>
+                        <constraint firstAttribute="trailing" secondItem="phs-j4-YM5" secondAttribute="trailing" constant="8" id="fVk-tD-eKj"/>
+                        <constraint firstAttribute="height" constant="180" id="md8-CW-WCg"/>
+                        <constraint firstItem="phs-j4-YM5" firstAttribute="leading" secondItem="Rqn-6A-yjd" secondAttribute="leading" constant="8" id="sUi-DX-x5y"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6p-3h-hqP">
+                    <rect key="frame" x="0.0" y="197" width="320" height="40"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的手机/QQ/邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XSM-cW-gRC">
+                            <rect key="frame" x="8" y="5" width="304" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Mk8-1x-nJ1"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="J9y-lJ-rzf"/>
+                        <constraint firstItem="XSM-cW-gRC" firstAttribute="top" secondItem="e6p-3h-hqP" secondAttribute="top" constant="5" id="T01-Q8-q3G"/>
+                        <constraint firstAttribute="trailing" secondItem="XSM-cW-gRC" secondAttribute="trailing" constant="8" id="VOO-o9-kAg"/>
+                        <constraint firstItem="XSM-cW-gRC" firstAttribute="leading" secondItem="e6p-3h-hqP" secondAttribute="leading" constant="8" id="bR2-SA-SqA"/>
+                        <constraint firstAttribute="bottom" secondItem="XSM-cW-gRC" secondAttribute="bottom" constant="5" id="rjg-fq-4Ul"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的联系方式有助于我们沟通和解决问题，仅工作人员可见" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBd-3u-bzR">
+                    <rect key="frame" x="10" y="242" width="301" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="YOM-Fx-bFS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJB-Bo-hhq">
+                    <rect key="frame" x="10" y="281" width="301" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="rXl-6P-v4c"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="提交-未填写信息"/>
+                    <state key="selected" backgroundImage="提交-已填写信息">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="feedBack:" destination="-1" eventType="touchUpInside" id="vDc-1s-4zs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Rqn-6A-yjd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0QD-Fn-OTc"/>
+                <constraint firstAttribute="trailing" secondItem="DJB-Bo-hhq" secondAttribute="trailing" constant="9" id="21s-FC-gS1"/>
+                <constraint firstItem="uBd-3u-bzR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="6ZM-vM-RbI"/>
+                <constraint firstItem="e6p-3h-hqP" firstAttribute="top" secondItem="Rqn-6A-yjd" secondAttribute="bottom" constant="8" id="MLb-Fi-uBc"/>
+                <constraint firstItem="e6p-3h-hqP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sa8-Hc-cyZ"/>
+                <constraint firstItem="DJB-Bo-hhq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="WFK-87-RUW"/>
+                <constraint firstItem="uBd-3u-bzR" firstAttribute="top" secondItem="e6p-3h-hqP" secondAttribute="bottom" constant="5" id="Xne-N6-CzH"/>
+                <constraint firstItem="Rqn-6A-yjd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="9" id="cz1-X3-VjW"/>
+                <constraint firstAttribute="trailing" secondItem="e6p-3h-hqP" secondAttribute="trailing" id="gV6-zr-3Os"/>
+                <constraint firstAttribute="trailing" secondItem="Rqn-6A-yjd" secondAttribute="trailing" id="jId-zi-sEY"/>
+                <constraint firstItem="DJB-Bo-hhq" firstAttribute="top" secondItem="uBd-3u-bzR" secondAttribute="bottom" constant="18" id="jrr-eo-nNr"/>
+                <constraint firstAttribute="trailing" secondItem="uBd-3u-bzR" secondAttribute="trailing" constant="9" id="kmr-w9-II1"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="-61" y="30"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="提交-已填写信息" width="380" height="35"/>
+        <image name="提交-未填写信息" width="380" height="35"/>
+    </resources>
+</document>

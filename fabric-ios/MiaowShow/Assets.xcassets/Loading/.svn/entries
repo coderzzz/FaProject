@@ -1,0 +1,38 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Loading
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+Contents.json
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+31cc68f34934a99c0b0c1bebde56309c
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+hold1_60x72.imageset
+dir
+
+hold2_60x72.imageset
+dir
+
+hold3_60x72.imageset
+dir
+

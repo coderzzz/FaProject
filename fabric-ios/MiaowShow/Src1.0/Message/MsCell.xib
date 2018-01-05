@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ms" rowHeight="50" id="KGk-i7-Jjw" customClass="MsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="头像-1" translatesAutoresizingMaskIntoConstraints="NO" id="zMr-5y-HeN">
+                        <rect key="frame" x="10" y="7" width="35" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中锦纺织" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rG-Xt-ar5">
+                        <rect key="frame" x="53" y="12" width="153" height="13"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="列表vip1" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-1d-bg3">
+                        <rect key="frame" x="33" y="32" width="12" height="10"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请问一下多少钱一米布？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-31-z5W">
+                        <rect key="frame" x="53" y="27" width="234" height="13"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5e-Le-Ey6">
+                        <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="1j1-Fp-d3V"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCN-Fq-qcw">
+                        <rect key="frame" x="196" y="7" width="116" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="1bH-4c-iz0"/>
+                            <constraint firstAttribute="width" constant="116" id="Mf4-aL-LnN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="08:22">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LCN-Fq-qcw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="BwW-AN-iRT"/>
+                    <constraint firstItem="k5e-Le-Ey6" firstAttribute="top" secondItem="LCN-Fq-qcw" secondAttribute="bottom" constant="7" id="DwD-6J-ood"/>
+                    <constraint firstAttribute="trailing" secondItem="k5e-Le-Ey6" secondAttribute="trailing" id="RyF-MP-ehg"/>
+                    <constraint firstAttribute="trailing" secondItem="LCN-Fq-qcw" secondAttribute="trailing" constant="8" id="hcp-Ab-9wd"/>
+                    <constraint firstItem="k5e-Le-Ey6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kcg-nr-OhT"/>
+                    <constraint firstAttribute="bottom" secondItem="k5e-Le-Ey6" secondAttribute="bottom" id="qcn-wt-tcL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="arrowbtn" destination="LCN-Fq-qcw" id="tEt-Ov-v6K"/>
+                <outlet property="logo" destination="zMr-5y-HeN" id="n95-eh-vHJ"/>
+                <outlet property="sublab" destination="jzc-31-z5W" id="ddE-vW-hPk"/>
+                <outlet property="titlelab" destination="3rG-Xt-ar5" id="d1H-zr-Ivf"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="-32"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="列表vip1" width="12" height="10"/>
+        <image name="头像-1" width="45" height="44"/>
+    </resources>
+</document>

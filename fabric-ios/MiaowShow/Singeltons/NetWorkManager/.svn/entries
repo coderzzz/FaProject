@@ -1,0 +1,40 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/NetWorkManager
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+BAIRUITECH_NetWorkManager.h
+file
+181
+
+
+
+2017-08-31T02:57:12.000000Z
+9733428baf665af64e07eda00acb8ef2
+2017-08-31T08:21:44.611764Z
+181
+yanjun
+
+BAIRUITECH_NetWorkManager.m
+file
+186
+
+
+
+2017-09-01T03:11:04.000000Z
+46f85eb9668928038c3ad51064a88c29
+2017-09-01T09:23:13.819648Z
+186
+yanjun
+

@@ -1,0 +1,68 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/ThirdParty/HPGrowingTextView
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+BAIRUITECH_HPGrowingTextView.h
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+dddf4d9ea24aaa71f1a535f019dc0f4a
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+BAIRUITECH_HPTextViewInternal.h
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+64fddb5537abb588258034362cfa6968
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+BAIRUITECH_HPGrowingTextView.m
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+42664575a9d11508cc0f5ba1a9f8e08c
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+BAIRUITECH_HPTextViewInternal.m
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+d53481d3c18dbae1ea0245c0a67f547a
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+

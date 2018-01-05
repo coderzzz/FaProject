@@ -1,0 +1,84 @@
+//
+//  PrefixHeader.pch
+//  MiaowShow
+//
+//  Created by ALin on 16/6/14.
+//  Copyright © 2016年 ALin. All rights reserved.
+//
+
+
+#pragma mark - 自定义NSLog
+
+//#ifdef __OBJC__
+//
+//#ifdef DEBUG
+//#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t  %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+//#else
+//#define NSLog(FORMAT, ...) nil
+//#endif
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <IJKMediaFramework/IJKMediaFramework.h>
+#import <Masonry.h>
+
+#import "UIButton+WebCache.h"
+
+#import <MJExtension.h>
+#import "AppDelegate.h"
+#import <UMSocialCore/UMSocialCore.h>
+#import "Masonry.h"
+#import "BlocksKit.h"
+#import "BlocksKit+UIKit.h"
+#import "BlocksKit+MessageUI.h"
+#import "extobjc.h"
+#import <AFNetworking.h>
+#import "BRLoginNavigationController.h"
+#import "BRLoginViewController.h"
+#import "BAIRUITECH_BRAccount.h"
+#import "BAIRUITECH_BRAccoutTool.h"
+#import "BAIRUITECH_BRTipView.h"
+
+#import "MBProgressHUD.h"
+
+#import "FabricSocket.h"
+#import "PayTool.h"
+#import "EMMessage.h"
+#import "EMMessageBody.h"
+#import "ZZTagView.h"
+#import "BAIRUITECH_NetWorkManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MJRefresh.h>
+#import <KeyboardManager.h>
+#import "ZZImageView.h"
+#import "BaseViewController.h"
+#import "AllCategory.h"
+#import "UITextView+Placeholder.h"
+#define  SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define  SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
+
+
+#define VIEW_WIDTH    self.view.frame.size.width
+#define VIEW_HEIGTH   self.view.frame.size.height
+
+
+
+// 默认颜色和文字大小
+//主色块,文字链接色(深蓝色)
+
+#define BGColor [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]
+
+#define MainColor   [UIColor colorWithRed:233/255.0 green:157/255.0 blue:51/255.0 alpha:1]
+
+
+#define Color   [UIColor colorWithRed:78/255.0 green:171/255.0 blue:232/255.0 alpha:1]
+
+#define YJLog(...) NSLog(__VA_ARGS__)
+
+
+#endif /* PrefixHeader_pch */
+
+
+//#endif

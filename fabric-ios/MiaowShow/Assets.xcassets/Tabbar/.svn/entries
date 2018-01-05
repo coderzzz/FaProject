@@ -1,0 +1,56 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Tabbar
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+toolbar_me.imageset
+dir
+
+toolbar_me_sel.imageset
+dir
+
+Contents.json
+file
+
+
+
+
+2017-08-21T03:32:40.000000Z
+31cc68f34934a99c0b0c1bebde56309c
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+toolbar_msg.imageset
+dir
+
+toolbar_video.imageset
+dir
+
+toolbar_home.imageset
+dir
+
+toolbar_msg_sel.imageset
+dir
+
+toolbar_video_sel.imageset
+dir
+
+toolbar_home_sel.imageset
+dir
+
+toolbar_live.imageset
+dir
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="GiftListCollectionViewCell" reuseIdentifier="BAIRUITECH_GiftListCollectionViewCell" id="gTV-IL-0wX" customClass="BAIRUITECH_GiftListCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="118" height="126"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="118" height="126"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBQ-5c-y4J">
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XKJ-DE-qB3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="RfP-G6-Etg"/>
+                                    <constraint firstAttribute="width" constant="55" id="f8a-qm-vMc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gnr-I6-gJT">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="k67-at-XAj"/>
+                                    <constraint firstAttribute="height" constant="15" id="ni1-GD-bqW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-Rl-eSR">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鲜花" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ai-gK-g57">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="53Q-El-Vry"/>
+                            <constraint firstItem="XKJ-DE-qB3" firstAttribute="top" secondItem="fBQ-5c-y4J" secondAttribute="top" constant="10" id="DZg-y3-SzZ"/>
+                            <constraint firstItem="8ai-gK-g57" firstAttribute="centerX" secondItem="fBQ-5c-y4J" secondAttribute="centerX" id="Iyg-wr-rFg"/>
+                            <constraint firstAttribute="trailing" secondItem="gnr-I6-gJT" secondAttribute="trailing" constant="2" id="TSp-hQ-j8j"/>
+                            <constraint firstItem="XKJ-DE-qB3" firstAttribute="centerX" secondItem="fBQ-5c-y4J" secondAttribute="centerX" id="awl-6T-rlT"/>
+                            <constraint firstItem="6eM-Rl-eSR" firstAttribute="centerX" secondItem="fBQ-5c-y4J" secondAttribute="centerX" id="d6Z-EM-jiH"/>
+                            <constraint firstItem="gnr-I6-gJT" firstAttribute="top" secondItem="fBQ-5c-y4J" secondAttribute="top" id="j90-DQ-SGW"/>
+                            <constraint firstItem="6eM-Rl-eSR" firstAttribute="top" secondItem="8ai-gK-g57" secondAttribute="bottom" id="jLG-Oj-DpD"/>
+                            <constraint firstItem="8ai-gK-g57" firstAttribute="top" secondItem="XKJ-DE-qB3" secondAttribute="bottom" id="ljD-c1-GbO"/>
+                            <constraint firstAttribute="width" constant="80" id="nLM-8Y-htM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="fBQ-5c-y4J" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="QAh-kJ-w9T"/>
+                <constraint firstItem="fBQ-5c-y4J" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="rsS-Xj-srf"/>
+            </constraints>
+            <size key="customSize" width="118" height="126"/>
+            <connections>
+                <outlet property="giftImageView" destination="XKJ-DE-qB3" id="ZCD-cZ-Qhe"/>
+                <outlet property="giftNameLabel" destination="8ai-gK-g57" id="4UW-D2-b99"/>
+                <outlet property="giftView" destination="fBQ-5c-y4J" id="ASW-OH-uWo"/>
+                <outlet property="giftWealthLabel" destination="6eM-Rl-eSR" id="yyu-aw-CDb"/>
+                <outlet property="selectImageView" destination="gnr-I6-gJT" id="o3Z-pL-yfy"/>
+            </connections>
+            <point key="canvasLocation" x="301" y="190"/>
+        </collectionViewCell>
+    </objects>
+</document>

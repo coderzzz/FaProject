@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="help" id="gTV-IL-0wX" customClass="HelpCell">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="黄色半透明背景" translatesAutoresizingMaskIntoConstraints="NO" id="SwC-0Z-0im">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="头像" translatesAutoresizingMaskIntoConstraints="NO" id="hJ9-yQ-2FZ">
+                        <rect key="frame" x="4" y="5" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obn-Ox-Dtc">
+                        <rect key="frame" x="28" y="0.0" width="97" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SwC-0Z-0im" secondAttribute="trailing" id="7yK-zU-Q0K"/>
+                <constraint firstItem="SwC-0Z-0im" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8iI-JP-qiK"/>
+                <constraint firstItem="SwC-0Z-0im" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a2Y-nL-kY1"/>
+                <constraint firstAttribute="bottom" secondItem="SwC-0Z-0im" secondAttribute="bottom" id="mnc-1u-r9t"/>
+            </constraints>
+            <connections>
+                <outlet property="bgimg" destination="SwC-0Z-0im" id="ow9-Uo-t4H"/>
+                <outlet property="head" destination="hJ9-yQ-2FZ" id="7rl-6E-c6X"/>
+                <outlet property="lab" destination="Obn-Ox-Dtc" id="KrR-47-epk"/>
+            </connections>
+            <point key="canvasLocation" x="-68.5" y="44"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="头像" width="41" height="41"/>
+        <image name="黄色半透明背景" width="89" height="25"/>
+    </resources>
+</document>

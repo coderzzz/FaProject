@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="i" id="gTV-IL-0wX" customClass="ImageCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="98" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="98" height="84"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e3R-hv-Jh7">
+                        <rect key="frame" x="12" y="0.0" width="86" height="84"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="e3R-hv-Jh7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="A5e-Vn-F4K"/>
+                <constraint firstAttribute="trailing" secondItem="e3R-hv-Jh7" secondAttribute="trailing" id="PZu-ea-b0o"/>
+                <constraint firstAttribute="bottom" secondItem="e3R-hv-Jh7" secondAttribute="bottom" id="ZcI-bn-d6Z"/>
+                <constraint firstItem="e3R-hv-Jh7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="s2u-aA-uqA"/>
+            </constraints>
+            <size key="customSize" width="98" height="84"/>
+            <connections>
+                <outlet property="imageV" destination="e3R-hv-Jh7" id="Mmk-Zs-snP"/>
+            </connections>
+            <point key="canvasLocation" x="49" y="51"/>
+        </collectionViewCell>
+    </objects>
+</document>

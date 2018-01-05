@@ -1,0 +1,35 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow.xcodeproj
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+xcuserdata
+dir
+
+project.pbxproj
+file
+186
+
+
+
+2017-09-01T08:05:31.000000Z
+0d4d82af6824d8976bd31d9d6881790e
+2017-09-01T09:23:13.819648Z
+186
+yanjun
+has-props
+
+project.xcworkspace
+dir
+

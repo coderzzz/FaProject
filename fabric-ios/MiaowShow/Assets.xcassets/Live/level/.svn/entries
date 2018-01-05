@@ -1,0 +1,59 @@
+8
+
+dir
+122
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Assets.xcassets/Live/level
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+good1_30x30.imageset
+dir
+
+good2_30x30.imageset
+dir
+
+Contents.json
+file
+
+
+
+
+2017-08-21T01:12:05.000000Z
+31cc68f34934a99c0b0c1bebde56309c
+2017-08-28T06:22:07.571325Z
+122
+yanjun
+has-props
+
+good3_30x30.imageset
+dir
+
+good4_30x30.imageset
+dir
+
+good5_30x30.imageset
+dir
+
+good6_30x30.imageset
+dir
+
+good7_30x30.imageset
+dir
+
+good8_30x30.imageset
+dir
+
+good9_30x30.imageset
+dir
+
+cat_food_18x12.imageset
+dir
+

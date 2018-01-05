@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RealNameViewController">
+            <connections>
+                <outlet property="foot" destination="8FI-Oq-kib" id="DYL-0W-zdc"/>
+                <outlet property="tableView" destination="7vp-ud-RFr" id="XLg-KE-XDi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7vp-ud-RFr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dAN-2a-slk"/>
+                        <outlet property="delegate" destination="-1" id="eiR-X7-suC"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7vp-ud-RFr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dpg-ng-DkZ"/>
+                <constraint firstAttribute="trailing" secondItem="7vp-ud-RFr" secondAttribute="trailing" id="ocy-mW-p1M"/>
+                <constraint firstItem="7vp-ud-RFr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uIO-Ew-PEv"/>
+                <constraint firstAttribute="bottom" secondItem="7vp-ud-RFr" secondAttribute="bottom" id="zuH-fX-PmI"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="8FI-Oq-kib">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h0-wm-RYs">
+                    <rect key="frame" x="84" y="34.5" width="207" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Jae-U9-JRb"/>
+                        <constraint firstAttribute="width" constant="207" id="w9m-To-vkz"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="实名认证-填写完成"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="c0i-S5-xJz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4h0-wm-RYs" firstAttribute="centerX" secondItem="8FI-Oq-kib" secondAttribute="centerX" id="5Mw-Gq-7Jg"/>
+                <constraint firstItem="4h0-wm-RYs" firstAttribute="centerY" secondItem="8FI-Oq-kib" secondAttribute="centerY" id="sga-C5-qXg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25" y="524"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="实名认证-填写完成" width="207" height="34"/>
+    </resources>
+</document>

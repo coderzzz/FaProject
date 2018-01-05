@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AgentReusableView">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="213"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在线助理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2h-bX-Gh1">
+                    <rect key="frame" x="8" y="188" width="150" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="KZt-UV-kW0"/>
+                        <constraint firstAttribute="width" constant="150" id="Lrx-cr-7jS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn5-YZ-Hu2">
+                    <rect key="frame" x="283" y="188" width="67" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="67" id="S1S-rM-vwP"/>
+                        <constraint firstAttribute="height" constant="25" id="SHs-8N-7Ej"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <inset key="imageEdgeInsets" minX="57" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="更多" image="列表二级菜单">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vpe-Vv-Sik">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="186"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Zn5-YZ-Hu2" secondAttribute="trailing" id="8bd-9b-1eq"/>
+                <constraint firstAttribute="bottom" secondItem="Zn5-YZ-Hu2" secondAttribute="bottom" id="HC1-Wr-Unb"/>
+                <constraint firstItem="p2h-bX-Gh1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Ntn-Cu-7Lh"/>
+                <constraint firstItem="Vpe-Vv-Sik" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Tav-8f-ifZ"/>
+                <constraint firstItem="Vpe-Vv-Sik" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="W6h-cI-Tto"/>
+                <constraint firstAttribute="bottom" secondItem="p2h-bX-Gh1" secondAttribute="bottom" id="Xqf-k1-E8P"/>
+                <constraint firstItem="Zn5-YZ-Hu2" firstAttribute="top" secondItem="Vpe-Vv-Sik" secondAttribute="bottom" constant="2" id="a9Y-aC-skv"/>
+                <constraint firstAttribute="trailing" secondItem="Vpe-Vv-Sik" secondAttribute="trailing" id="l4f-B2-uQz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="caName" destination="p2h-bX-Gh1" id="N4f-Cu-XQj"/>
+                <outlet property="contan" destination="Vpe-Vv-Sik" id="amH-eh-dml"/>
+                <outlet property="moreBtn" destination="Zn5-YZ-Hu2" id="R1a-h9-FDx"/>
+            </connections>
+            <point key="canvasLocation" x="-90" y="-70.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="列表二级菜单" width="3" height="6"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

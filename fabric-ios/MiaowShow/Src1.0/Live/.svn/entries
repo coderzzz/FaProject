@@ -1,0 +1,25 @@
+8
+
+dir
+155
+svn://yanjun@202.75.222.236:3661/fabric-live/2_code/fabric-ios-new/MiaowShow/Live
+svn://yanjun@202.75.222.236:3661/fabric-live
+
+
+
+2017-08-30T06:09:30.472795Z
+155
+yanjun
+
+
+svn:special svn:externals svn:needs-lock
+
+Controller
+dir
+
+SafeObject
+dir
+
+View
+dir
+

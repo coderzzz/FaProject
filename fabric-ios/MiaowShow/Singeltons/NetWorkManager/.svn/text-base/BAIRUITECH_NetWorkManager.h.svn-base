@@ -1,0 +1,331 @@
+//
+//  NetWorkManager.h
+//  AFNetWorking再封装
+//
+//  Created by 戴文婷 on 16/5/20.
+//  Copyright © 2016年 戴文婷. All rights reserved.
+//
+
+#import <AFNetworking/AFNetworking.h>
+
+//static NSString *BaseURL = @"http://120.76.220.85:8081/AnyChatFinanceLive";
+//static NSString *AnyChatURL = @"120.76.220.85";//公网
+
+//static NSString *BaseURL = @"http://192.168.2.19:8081/AnyChatLive";//测试
+//static NSString *BaseURL = @"http://120.76.220.85:8087/AnyChatLive";//公网
+//static NSString *AnyChatURL = @"cloud.anychat.cn";//推流公网
+
+
+
+
+static NSString *BaseURL = @"http://mobile.fabric.cn";//公网
+//static NSString *BaseURL = @"http://202.75.219.28:17001";//公网
+static NSString *AnyChatURL = @"cloud.anychat.cn";//推流公网
+
+/**定义请求类型的枚举*/
+
+typedef NS_ENUM(NSUInteger,HttpRequestType)
+{
+    
+    HttpRequestTypeGet = 0,
+    HttpRequestTypePost
+    
+};
+
+
+/**定义请求成功的block*/
+typedef void(^requestSuccess)( NSDictionary * object);
+
+/**定义请求失败的block*/
+typedef void(^requestFailure)( NSError *error);
+
+/**定义上传进度block*/
+typedef void(^uploadProgress)(float progress);
+
+/**定义下载进度block*/
+typedef void(^downloadProgress)(float progress);
+
+
+@interface BAIRUITECH_NetWorkManager : AFHTTPSessionManager
+
+
+/**
+ *  单例方法
+ *
+ *  @return 实例对象
+ */
++(instancetype)shareManager;
+
+/**
+ *  网络请求的实例方法
+ *
+ *  @param type         get / post
+ *  @param urlString    请求的地址
+ *  @param paraments    请求的参数
+ *  @param successBlock 请求成功的回调
+ *  @param failureBlock 请求失败的回调
+ *  @param progress 进度
+ */
++(void)requestWithType:(HttpRequestType)type withUrlString:(NSString *)urlString withParaments:(id)paraments withSuccessBlock:( requestSuccess)successBlock withFailureBlock:( requestFailure)failureBlock progress:(downloadProgress)progress;
+
+/**
+ *  上传图片
+ *
+ *  @param operations   上传图片预留参数---视具体情况而定 可移除
+ *  @param imageArray   上传的图片数组
+ *  @parm width      图片要被压缩到的宽度
+ *  @param urlString    上传的url
+ *  @param successBlock 上传成功的回调
+ *  @param failureBlock 上传失败的回调
+ *  @param progress     上传进度
+ */
+
++(void)uploadImageWithOperations:(NSDictionary *)operations withImageArray:(NSArray *)imageArray withtargetWidth:(CGFloat )width withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailurBlock:(requestFailure)failureBlock withUpLoadProgress:(uploadProgress)progress;
+
+
+/**
+ *  视频上传
+ *
+ *  @param operations   上传视频预留参数---视具体情况而定 可移除
+ *  @param videoPath    上传视频的本地沙河路径
+ *  @param urlString     上传的url
+ *  @param successBlock 成功的回调
+ *  @param failureBlock 失败的回调
+ *  @param progress     上传的进度
+ */
++(void)uploadVideoWithOperaitons:(NSDictionary *)operations withVideoPath:(NSString *)videoPath withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock withUploadProgress:(uploadProgress)progress;
+
+
+/**
+ *  文件下载
+ *
+ *  @param operations   文件下载预留参数---视具体情况而定 可移除
+ *  @param savePath     下载文件保存路径
+ *  @param urlString        请求的url
+ *  @param successBlock 下载文件成功的回调
+ *  @param failureBlock 下载文件失败的回调
+ *  @param progress     下载文件的进度显示
+ */
+
+
++(void)downLoadFileWithOperations:(NSDictionary *)operations withSavaPath:(NSString *)savePath withUrlString:(NSString *)urlString withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock withDownLoadProgress:(downloadProgress)progress;
+
+/**
+ *  取消所有的网络请求
+ */
+
+
++(void)cancelAllRequest;
+/**
+ *  取消指定的url请求
+ *
+ *  @param requestType 该请求的请求类型
+ *  @param string      该请求的url
+ */
+
++(void)cancelHttpRequestWithRequestType:(NSString *)requestType requestUrlString:(NSString *)string;
+
+
+//所有接口示例如下
+//登陆
++(void)FinanceLiveShow_loginParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//验证码
++(void)FinanceLiveShow_SMSCodeParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//第三方登陆
++(void)FinanceLiveShow_thirdplatLoginParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//注册
++(void)FinanceLiveShow_registParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+//房间列表
++(void)FinanceLiveShow_roomList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+
+//观众列表
++(void)FinanceLiveShow_users:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+//进入房间
++(void)FinanceLiveShow_enterRoom:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+
+//找回密码
++(void)FinanceLiveShow_resetPasswordParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取个人资料
++(void)FinanceLiveShow_getPersionDataParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//更新个人资料
++(void)FinanceLiveShow_updatePersionDataParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//发布预告
++(void)FinanceLiveShow_createTrailerParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//粉丝列表
++(void)FinanceLiveShow_getMyFansListParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//消息列表
++(void)FinanceLiveShow_getMessagesListParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//消息批量删除
++(void)FinanceLiveShow_deleteMessagesParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//预告列表
++(void)FinanceLiveShow_getTrailerListParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//预告详情列表
++(void)FinanceLiveShow_getTrailerByIdParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//订阅预告
++(void)FinanceLiveShow_subscribeTrailerParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//删除预告(自己)
++(void)FinanceLiveShow_deleteTrailerParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//删除订阅预告
++(void)FinanceLiveShow_cancelSubscribeParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+//获取个人主页(暂时)
++(void)FinanceLiveShow_getComperePersonalDataParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+//获取绑定账号列表
++(void)FinanceLiveShow_bindAccountListParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//绑定手机号码
++(void)FinanceLiveShow_bindMobileParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//解绑
++(void)FinanceLiveShow_unbundlingParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//绑定第三方账号
++(void)FinanceLiveShow_bindAccountParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//修改密码
++(void)FinanceLiveShow_updatePasswordParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+////获取版本号
+//+(void)FinanceLiveShow_getVersionMessageParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//校验版本号
++(void)FinanceLiveShow_getVersionMessageParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取图片上传路径
++(void)FinanceLiveShow_getGenerateSignParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//发布话题
++(void)FinanceLiveShow_createTopicParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//批量删除话题
++(void)FinanceLiveShow_deleteTopicParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//预定预告人员列表
++(void)FinanceLiveShow_getSubscribeUserParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//退出登录
++(void)FinanceLiveShow_logoutParam:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//账户状态控制(冻结/解冻)
++(void)FinanceLiveShow_accountControl:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取场控列表
++(void)FinanceLiveShow_getMyControlFieldUserList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//设置场控
++(void)FinanceLiveShow_setUpControlFieldUser:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//场控搜索
++(void)FinanceLiveShow_searchControlFieldUser:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取黑名单列表
++(void)FinanceLiveShow_getBlackList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//添加黑名单列表
++(void)FinanceLiveShow_addUserBlackList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//移出黑名单
++(void)FinanceLiveShow_removeUserBlackList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取标签列表
++(void)FinanceLiveShow_getTagList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//实名认证
++(void)FinanceLiveShow_realNameAuthentication:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//专业认证
++(void)FinanceLiveShow_professionalCertification:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+#pragma mark 关注接口
+/**关注接口,添加,取消关注 */
++(void)FinanceLiveShow_addAttention:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+#pragma mark 直播界面,创建直播界面网络数据
+/**创建直播界面,获取直播封面列表 */
++(void)FinanceLiveShow_getLiveCoverList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**创建直播界面,获取直播类型列表 */
++(void)FinanceLiveShow_getLiveContentType:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**创建直播界面,删除直播封面 */
++(void)FinanceLiveShow_removeLiveCover:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**创建直播界面,创建直播(获取activityId) */
++(void)FinanceLiveShow_createLive:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**创建直播界面,分享直播 */
++(void)FinanceLiveShow_inviteFriends:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**创建直播界面,个人资料编辑界面,上传图片 */
++(void)FinanceLiveShow_uploadPic:(id)param withFullUrlString:(NSString *)fullUrlString withImageData:(NSData *)ImageData withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock withUpLoadProgress:(uploadProgress)progress;
+/**直播界面,获取普通观众列表 */
++(void)FinanceLiveShow_getLiveUserList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取抢座观众列表 */
++(void)FinanceLiveShow_getMickList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取场控列表 */
++(void)FinanceLiveShow_getControlFieldUserList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取观众个人资料 */
++(void)FinanceLiveShow_getAudiencePersonalData:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取主播个人资料 */
++(void)FinanceLiveShow_getComperePersonalData:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取礼物资料 */
++(void)FinanceLiveShow_getGiftList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,直播管理操作(踢出,禁言,设为场控) */
++(void)FinanceLiveShow_manage:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,举报 */
++(void)FinanceLiveShow_report:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,控制上下麦 */
++(void)FinanceLiveShow_controlMic:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,结束直播并获取观看人数,收益,时长等 */
++(void)FinanceLiveShow_finishLive:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,根据直播活动id获取直播数据 */
++(void)FinanceLiveShow_getLiveDataByLiveId:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,点赞 */
++(void)FinanceLiveShow_prase:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,赠送礼物 */
++(void)FinanceLiveShow_giveGift:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,抢座,取消抢座(请求上下麦) */
++(void)FinanceLiveShow_requestMic:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,观众进入直播 */
++(void)FinanceLiveShow_enterLiveActivity:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,观众离开直播 */
++(void)FinanceLiveShow_leaveLiveActivity:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取等级 */
++(void)FinanceLiveShow_myGrades:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,用透明通道发送文字消息 */
++(void)FinanceLiveShow_sendTextMessages:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,获取anyChat配置信息 */
++(void)FinanceLiveShow_getConfigureIp:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+/**直播界面,主播获取房间是否存在信息 */
++(void)FinanceLiveShow_getLiveActivityStatus:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+#pragma mark --首页
+//获取滚动广告数据
++(void)FinanceLiveShow_getBannerList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取首页数据
++(void)FinanceLiveShow_getHomePage:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取搜索数据
++(void)FinanceLiveShow_search:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取未读消息数
++(void)FinanceLiveShow_getUnreadMessageNumbers:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取内容分类
++(void)FinanceLiveShow_getContentType:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//根据内容分类id获取列表
++(void)FinanceLiveShow_getListByTypeId:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
+#pragma mark = 首页二期
+//获取首页数据
++(void)FinanceLiveShow_LZLGetHomePage:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取直播、预告分类
++(void)FinanceLiveShow_LZLGetLiveNoticeContentType:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//根据内容分类id获取列表
++(void)FinanceLiveShow_LZLGetListByTypeId:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取排行榜分类
++(void)FinanceLiveShow_LZLGetRankType:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//根据排行榜分类id获取列表
++(void)FinanceLiveShow_LZLGetRankingListByTypeId:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取历史搜索记录
++(void)FinanceLiveShow_LZLGetMySearchHistoryList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取热门搜索记录
++(void)FinanceLiveShow_LZLGetHotSearchList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取搜索数据
++(void)FinanceLiveShow_LZLSearch:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//根据预告id获取评论列表
++(void)FinanceLiveShow_LZLGetCommentListByTrailerId:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//发表评论
++(void)FinanceLiveShow_LZLCreateComment:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+#pragma mark --关注
+//关注
++(void)FinanceLiveShow_getAttentionList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+#pragma mark --话题
+//根据分类id获取话题列表
++(void)FinanceLiveShow_getTopicList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//获取话题列表
++(void)FinanceLiveShow_getMyTopicList:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//根据话题id获取话题信息
++(void)FinanceLiveShow_getTopicById:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//回复话题
++(void)FinanceLiveShow_replyTopic:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//话题点赞
++(void)FinanceLiveShow_topicClickLike:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//举报
++(void)FinanceLiveShow_reportTopicResponse:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+//app 上传日志接口
++(void)FinanceLiveShow_uploadLogs:(id)param withLogData:(NSData *)logData withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+@end

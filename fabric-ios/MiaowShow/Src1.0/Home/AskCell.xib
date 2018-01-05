@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ask" id="gTV-IL-0wX" customClass="AskCell">
+            <rect key="frame" x="0.0" y="0.0" width="202" height="158"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="202" height="158"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="112" translatesAutoresizingMaskIntoConstraints="NO" id="HHV-BB-jKf">
+                        <rect key="frame" x="0.0" y="0.0" width="202" height="115"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5np-lL-XSz">
+                        <rect key="frame" x="0.0" y="115" width="202" height="43"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="杭州金布纺织有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxM-4X-sNg">
+                                <rect key="frame" x="6" y="8" width="119" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主营：棉、麻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32C-vc-VsD">
+                                <rect key="frame" x="6" y="23" width="119" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="yIW-ur-pQ9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HHV-BB-jKf" secondAttribute="trailing" id="2MG-TM-j32"/>
+                <constraint firstItem="5np-lL-XSz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Q6-JE-wwh"/>
+                <constraint firstItem="HHV-BB-jKf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Zfs-hT-y6v"/>
+                <constraint firstItem="5np-lL-XSz" firstAttribute="top" secondItem="HHV-BB-jKf" secondAttribute="bottom" id="dWd-zg-6zv"/>
+                <constraint firstAttribute="bottom" secondItem="5np-lL-XSz" secondAttribute="bottom" id="hvJ-PC-fK9"/>
+                <constraint firstItem="HHV-BB-jKf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k3E-W1-2tS"/>
+                <constraint firstAttribute="trailing" secondItem="5np-lL-XSz" secondAttribute="trailing" id="sOz-4f-79o"/>
+            </constraints>
+            <size key="customSize" width="202" height="158"/>
+            <connections>
+                <outlet property="imgv" destination="HHV-BB-jKf" id="YMb-6G-Ow5"/>
+                <outlet property="sublab" destination="32C-vc-VsD" id="siX-2X-Zag"/>
+                <outlet property="titlelab" destination="QxM-4X-sNg" id="Esx-rw-vXl"/>
+            </connections>
+            <point key="canvasLocation" x="107" y="38"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="112" width="241" height="208"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
