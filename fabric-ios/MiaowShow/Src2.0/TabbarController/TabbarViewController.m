@@ -16,6 +16,7 @@
 #import "MESSAGEViewController.h"
 #import "MINEViewController.h"
 #import "FindObjController.h"
+#import "ALinNewStarViewController.h"
 @interface TabbarViewController ()<UITabBarControllerDelegate>
 
 @end
@@ -95,7 +96,7 @@
     [self addChildViewController:[[HOMEController alloc] init] imageNamed:@"home" titleNamed:@"首页"];
     [self addChildViewController:[[GetOrderCenterController alloc]init] imageNamed:@"search_list" titleNamed:@"订单"];
     [self addChildViewController:[[FindObjController alloc] init] imageNamed:@"round_add" titleNamed:@"发布"];
-    [self addChildViewController:[[HomeViewController alloc] init] imageNamed:@"mark" titleNamed:@"消息"];
+    [self addChildViewController:[[ALinNewStarViewController alloc] init] imageNamed:@"mark" titleNamed:@"消息"];
     [self addChildViewController:[[MINEViewController alloc] init] imageNamed:@"my" titleNamed:@"我的"];
 
 }

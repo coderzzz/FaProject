@@ -7,7 +7,7 @@
 //
 
 #import "ALinNewStarViewController.h"
-#import "MsCell.h"
+#import "MCell.h"
 #import "PrivateChatItem.h"
 #import "EaseMessageViewController.h"
 @interface ALinNewStarViewController ()
@@ -19,7 +19,7 @@
 
 @end
 
-static NSString *reuseIdentifier = @"ms";
+static NSString *reuseIdentifier = @"m";
 
 @implementation ALinNewStarViewController
 - (NSMutableArray *)lives
@@ -30,17 +30,32 @@ static NSString *reuseIdentifier = @"ms";
     return _lives;
 }
 
+- (NSMutableArray *)list
+{
+    if (!_list) {
+        _list = [NSMutableArray array];
+    }
+    return _list;
+}
+
+-(id)init{
+    
+    self = [super init];
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didReceiveMessage:) name:@"FSDidReceiveMessage" object:nil];
     [self setup];
 }
 
 - (void)setup
 {
+    self.title = @"消息";
     
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MsCell class]) bundle:nil] forCellReuseIdentifier:
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MCell class]) bundle:nil] forCellReuseIdentifier:
      reuseIdentifier];
 //    [self.tableView registerClass:[ALinHomeADCell class] forCellReuseIdentifier:ADReuseIdentifier];
     //    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT -64 - 49);
@@ -50,14 +65,107 @@ static NSString *reuseIdentifier = @"ms";
     self.tableView.backgroundColor = BGColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(firstLoad)];
-    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        
-        [self loadMore];
-    }];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(firstLoad)];
+//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+//        
+//        [self loadMore];
+//    }];
+//    
+//    [self.tableView.mj_header beginRefreshing];
+    [self loadAllMsg];
+    [self.tableView reloadData];
+}
+
+
+
+
+- (void)loadAllMsg{
     
-    [self.tableView.mj_header beginRefreshing];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didReceiveMessage:) name:@"FSDidReceiveMessage" object:nil];
+    BAIRUITECH_BRAccount *account = [BAIRUITECH_BRAccoutTool account];
+
+    for (NSDictionary *dic in [FabricSocket shareInstances].messages) {
+        
+        [self parseMsg:dic];
+    }
+
+
+}
+
+- (void)parseMsg:(NSDictionary *)dic{
+    
+    NSString *revId = [NSString stringWithFormat:@"%@",dic[@"receiverid"]];
+    NSString *senderId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
+    NSString *cmd = [NSString stringWithFormat:@"%@",dic[@"cmd"]];
+    if (![revId isEqualToString:@"0"]) {
+        
+        if ([cmd isEqualToString:@"601"]) {
+            
+            NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
+            if (self.list.count>0) {
+                
+                for (PrivateChatItem *item in self.list) {
+                    
+                    if ([item.userId isEqualToString:senderId] || [revId isEqualToString:item.userId]) {
+                        
+                        item.content = content[@"msg"];
+                        item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+                        [self.tableView reloadData];
+                        return;
+                    }
+                    
+                }
+                
+                [self addList:dic];
+            }else{
+                
+                [self addList:dic];
+            }
+            
+        }
+        
+    }else{
+        //系统消息
+        if ([cmd isEqualToString:@"701"]) {
+            
+            NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
+            if (self.list.count>0) {
+                
+                for (PrivateChatItem *item in self.list) {
+                    
+                    if ([item.userId isEqualToString:@"-1"]) {
+                        
+                        item.content = content[@"content"];
+                        item.title = content[@"title"];
+                        item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+                        [self.tableView reloadData];
+                        return;
+                    }
+                    
+                }
+                
+                PrivateChatItem *item = [PrivateChatItem new];
+                item.content = content[@"content"];
+                item.title = content[@"title"];
+                item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+                item.userId = @"-1";
+                item.sysLogo = [UIImage imageNamed:@"系统消息-1"];
+                [self.list addObject:item];
+                [self.tableView reloadData];
+            }else{
+                
+                PrivateChatItem *item = [PrivateChatItem new];
+                item.content = content[@"content"];
+                item.title = content[@"title"];
+                item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+                item.userId = @"-1";
+                item.sysLogo = [UIImage imageNamed:@"系统消息-1"];
+                [self.list addObject:item];
+                [self.tableView reloadData];
+            }
+            
+        }
+        
+    }
 }
 
 #pragma mark FabricSocketNotification
@@ -68,9 +176,13 @@ static NSString *reuseIdentifier = @"ms";
         
         return;
     }
+    
+    
+    [self parseMsg:msg];
+    
+    /*
     NSString *reciveId = [NSString stringWithFormat:@"%@",msg[@"receiverid"]];
     if ([reciveId isEqualToString:@"0"]) return;
-    
     NSString *cmd = [NSString stringWithFormat:@"%@",msg[@"cmd"]];
     NSString *senderId = [NSString stringWithFormat:@"%@",msg[@"senderid"]];
     NSString *revId = [NSString stringWithFormat:@"%@",msg[@"receiverid"]];
@@ -92,6 +204,7 @@ static NSString *reuseIdentifier = @"ms";
                 if ([item.userId isEqualToString:senderId] || [revId isEqualToString:item.userId]) {
                     
                     item.content = content[@"msg"];
+                    item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",msg[@"time"]]];
                     [self.tableView reloadData];
                     return;
                 }
@@ -105,6 +218,7 @@ static NSString *reuseIdentifier = @"ms";
         }
         
     }
+     */
 }
 
 - (void)addList:(NSDictionary *)dic{
@@ -112,13 +226,33 @@ static NSString *reuseIdentifier = @"ms";
     PrivateChatItem *item = [PrivateChatItem new];
     item.chatContentType = 0;
     item.chatType = 0;
+    
+    NSString *senderId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
+    NSString *revId = [NSString stringWithFormat:@"%@",dic[@"receiverid"]];
+    BAIRUITECH_BRAccount *account = [BAIRUITECH_BRAccoutTool account];
+    
     NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
     //    message.text = content[@"msg"];
     //    message.from = content[@"nickName"];
     //    message.avatar = [NSString stringWithFormat:@"%@%@",ImageURL,content[@"userLogo"]];
-    item.nickName = content[@"nickName"];
+    
+    if ([revId isEqualToString:account.userId]) {
+        
+        item.nickName = content[@"nickName"];
+        item.userId = senderId;
+        
+    }else{
+        
+        item.nickName = content[@"toNickName"];
+        item.userId = revId;
+        
+    }
+    
+    
+    
+    item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
     item.content = content[@"msg"];
-    item.userId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
+    item.userLogo = content[@"userLogo"];
     [self.list addObject:item];
     [self.tableView reloadData];
 }
@@ -242,17 +376,26 @@ static NSString *reuseIdentifier = @"ms";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 50;
+    return 80;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    MsCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    MCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     PrivateChatItem *dic =self.list[indexPath.row];
-    [cell.logo sd_setImageWithURL:[NSURL URLWithString:dic.userLogo] placeholderImage:[UIImage imageNamed:@"112"]];
+    if ([dic.userId isEqualToString:@"-1"]) {
+        
+        cell.logo.image = dic.sysLogo;
+        
+    }else{
+        
+        [cell.logo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",ImageURL,dic.userLogo]] placeholderImage:[UIImage imageNamed:@"头像"]];
+    }
+    
     cell.titlelab.text = dic.nickName;
     cell.sublab.text = dic.content;
+    cell.dateLab.text = dic.time;
     return cell;
 }
 
@@ -261,11 +404,20 @@ static NSString *reuseIdentifier = @"ms";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PrivateChatItem *item =self.list[indexPath.row];
-    EaseMessageViewController *chatVC =[[EaseMessageViewController alloc]initWithConversationChatter:@""];
-    chatVC.toUserId = item.userId;
-    chatVC.showRefreshHeader = YES;
-    chatVC.title = item.nickName;
-    [self.navigationController pushViewController:chatVC animated:YES];
+
+    if ([item.userId isEqualToString:@"-1"]){
+        
+        
+    }
+    else{
+        
+        EaseMessageViewController *chatVC =[[EaseMessageViewController alloc]initWithConversationChatter:@""];
+        chatVC.toUserId = item.userId;
+        chatVC.showRefreshHeader = YES;
+        chatVC.title = item.nickName;
+        [self.navigationController pushViewController:chatVC animated:YES];
+    }
+    
     
 }
 

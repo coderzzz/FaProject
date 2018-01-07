@@ -16,9 +16,9 @@
 //static NSString *AnyChatURL = @"cloud.anychat.cn";//推流公网
 
 
-//static NSString *BaseURL = @"http://mobile2.fabric.cn";//开发
+static NSString *BaseURL = @"http://mobile2.fabric.cn";//开发
 
-static NSString *BaseURL = @"http://mobile.fabric.cn";//公网
+//static NSString *BaseURL = @"http://mobile.fabric.cn";//公网
 static NSString *ImageURL = @"http://img02.fabric.cn";//公网
 
 

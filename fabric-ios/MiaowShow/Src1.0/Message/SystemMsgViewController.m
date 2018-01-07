@@ -7,7 +7,7 @@
 //
 
 #import "SystemMsgViewController.h"
-#import "MsCell.h"
+#import "SysMsgCell.h"
 #import "EaseMessageViewController.h"
 @interface SystemMsgViewController ()
 
@@ -15,7 +15,7 @@
 @property (assign, nonatomic) int pageN;
 @end
 
-static NSString *reuseIdentifier = @"ms";
+static NSString *reuseIdentifier = @"sym";
 
 @implementation SystemMsgViewController
 
@@ -29,25 +29,81 @@ static NSString *reuseIdentifier = @"ms";
 - (void)setup
 {
     
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MsCell class]) bundle:nil] forCellReuseIdentifier:
+    self.title = @"系统消息";
+    self.list  = [NSMutableArray array];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SysMsgCell class]) bundle:nil] forCellReuseIdentifier:
      reuseIdentifier];
 
     //    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT -64 - 49);
     
     //    [self.tableView.mj_header beginRefreshing];
+    
+    self.tableView.estimatedRowHeight = 136;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.backgroundColor = BGColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self firstLoad];
-    }];
-    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        [self loadMore];
-    }];
-    [self.tableView.mj_header beginRefreshing];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [self firstLoad];
+//    }];
+//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+//        [self loadMore];
+//    }];
+//    [self.tableView.mj_header beginRefreshing];
+//
     
+    [self loadAllMsg];
     
+}
+- (void)loadAllMsg{
+    
+//    BAIRUITECH_BRAccount *account = [BAIRUITECH_BRAccoutTool account];
+    
+    for (NSDictionary *dic in [FabricSocket shareInstances].messages) {
+        
+        [self parseMsg:dic];
+    }
+    [self.tableView reloadData];
+    
+}
+
+- (void)parseMsg:(NSDictionary *)dic{
+    
+//    NSString *revId = [NSString stringWithFormat:@"%@",dic[@"receiverid"]];
+//    NSString *senderId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
+    NSString *cmd = [NSString stringWithFormat:@"%@",dic[@"cmd"]];
+
+    if ([cmd isEqualToString:@"701"]) {
+            
+       NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
+       NSString *time = [NSString stringWithFormat:@"%@",content[@"time"]];
+        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:content];
+        [dic setValue:time?time:@"" forKey:@"time"];
+        if (content) {
+            
+            [self.list addObject:dic];
+        }
+            
+    }
+}
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)str
+{
+    if (str == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err)
+    {
+        //  NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
 }
 
 
@@ -112,36 +168,16 @@ static NSString *reuseIdentifier = @"ms";
     
     return [self.list count];
 }
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    
-    UIView *view = [UIView new];
-    view.backgroundColor = BGColor;
-    return view;
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    
-    return 4;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 50;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    createTime = "2016-12-10 00:32:31";
-//    id = 9;
-//    messContent = sdfsdfsdfsd;
-//    messTitle = "\U767b\U5f55\U6ce8\U518c-\U79fb\U52a8\U7aef\U53cd\U9988";
-//    type = 0;
-    MsCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-     NSDictionary *dic = self.list[indexPath.row];
-    cell.titlelab.text = dic[@"messTitle"];
-    cell.sublab.text =  dic[@"messContent"];
-    [cell.arrowbtn setTitle:dic[@"createTime"] forState:UIControlStateNormal];
-//    [cell.logo sd_setImageWithURL:[NSURL URLWithString:dic[@"userLogo"]] placeholderImage:nil];
+
+    SysMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    NSDictionary *dic = self.list[indexPath.row];
+    cell.contentLab.text = dic[@"content"];
+    cell.dateLab.text = [NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+    cell.namelab.text = dic[@"title"];
 
     return cell;
 }
@@ -153,20 +189,20 @@ static NSString *reuseIdentifier = @"ms";
 {
     
     
-    NSDictionary *dic = self.list[indexPath.row];
-    EMMessage *message = [[EMMessage alloc]init];
-    EMMessageBody *body = [EMMessageBody new];
-    body.type = EMMessageBodyTypeText;
-    message.body = body;
-    message.text =  [NSString stringWithFormat:@"%@\n%@",dic[@"messTitle"],dic[@"messContent"]];
-//    message.from = @"系统消息";
-//    message.avatar = [NSString stringWithFormat:@"%@%@",ImageURL,content[@"userLogo"]];
-    message.direction = EMMessageDirectionReceive;
-    message.timestamp = [[NSString stringWithFormat:@"%@",@"111"] longLongValue];
-    EaseMessageViewController *chatVC =[[EaseMessageViewController alloc]initWithMsg:message hideToolBar:YES];
-    chatVC.title = @"系统消息";
-   
-    [self.navigationController pushViewController:chatVC animated:YES];
+//    NSDictionary *dic = self.list[indexPath.row];
+//    EMMessage *message = [[EMMessage alloc]init];
+//    EMMessageBody *body = [EMMessageBody new];
+//    body.type = EMMessageBodyTypeText;
+//    message.body = body;
+//    message.text =  [NSString stringWithFormat:@"%@\n%@",dic[@"messTitle"],dic[@"messContent"]];
+////    message.from = @"系统消息";
+////    message.avatar = [NSString stringWithFormat:@"%@%@",ImageURL,content[@"userLogo"]];
+//    message.direction = EMMessageDirectionReceive;
+//    message.timestamp = [[NSString stringWithFormat:@"%@",@"111"] longLongValue];
+//    EaseMessageViewController *chatVC =[[EaseMessageViewController alloc]initWithMsg:message hideToolBar:YES];
+//    chatVC.title = @"系统消息";
+//   
+//    [self.navigationController pushViewController:chatVC animated:YES];
 
     
 }

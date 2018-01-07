@@ -84,7 +84,7 @@ static NSString *reuseIdentifier = @"ms";
         [self loadMore];
     }];
     
-    [self.tableView.mj_header beginRefreshing];
+//    [self.tableView.mj_header beginRefreshing];
     
     UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hide)];
     ges.delegate = self;
@@ -140,33 +140,33 @@ static NSString *reuseIdentifier = @"ms";
 }
 
 - (void)getData{
-    
-    __weak  typeof(self) weakSelf = self;
-    BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
-    NSDictionary *dic = @{@"pageNo":@(_pageN),@"pageSize":@"10",@"userId":user.userId,@"chatType":@"0"};
-    [BAIRUITECH_NetWorkManager FinanceLiveShow_privateList:dic withSuccessBlock:^(NSDictionary *object) {
-        
-        [weakSelf.tableView.mj_header endRefreshing];
-        [weakSelf.tableView.mj_footer endRefreshing];
-        if([object[@"ret"] intValue] == 0){
-            
-//            [weakSelf.list addObjectsFromArray:[object[@"data"][@"chatList"] mutableCopy]];
-            
-            [weakSelf.list addObjectsFromArray:[PrivateChatItem mj_objectArrayWithKeyValuesArray:object[@"data"][@"chatList"]]];
-            
-            [weakSelf.tableView reloadData];
-            
-        }else{
-            
-            [BAIRUITECH_BRTipView showTipTitle:object[@"msg"] delay:1];
-        }
-        
-    } withFailureBlock:^(NSError *error) {
-        
-        YJLog(@"%@",error);
-        [weakSelf.tableView.mj_header endRefreshing];
-        [weakSelf.tableView.mj_footer endRefreshing];
-    }];
+//    
+//    __weak  typeof(self) weakSelf = self;
+//    BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
+//    NSDictionary *dic = @{@"pageNo":@(_pageN),@"pageSize":@"10",@"userId":user.userId,@"chatType":@"0"};
+//    [BAIRUITECH_NetWorkManager FinanceLiveShow_privateList:dic withSuccessBlock:^(NSDictionary *object) {
+//        
+//        [weakSelf.tableView.mj_header endRefreshing];
+//        [weakSelf.tableView.mj_footer endRefreshing];
+//        if([object[@"ret"] intValue] == 0){
+//            
+////            [weakSelf.list addObjectsFromArray:[object[@"data"][@"chatList"] mutableCopy]];
+//            
+//            [weakSelf.list addObjectsFromArray:[PrivateChatItem mj_objectArrayWithKeyValuesArray:object[@"data"][@"chatList"]]];
+//            
+//            [weakSelf.tableView reloadData];
+//            
+//        }else{
+//            
+//            [BAIRUITECH_BRTipView showTipTitle:object[@"msg"] delay:1];
+//        }
+//        
+//    } withFailureBlock:^(NSError *error) {
+//        
+//        YJLog(@"%@",error);
+//        [weakSelf.tableView.mj_header endRefreshing];
+//        [weakSelf.tableView.mj_footer endRefreshing];
+//    }];
 }
 
 #pragma mark FabricSocketNotification
@@ -201,6 +201,7 @@ static NSString *reuseIdentifier = @"ms";
                 if ([item.userId isEqualToString:senderId] || [revId isEqualToString:item.userId]) {
                     
                     item.content = content[@"msg"];
+                    item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",msg[@"time"]]];
                     [self.tableView reloadData];
                     return;
                 }
@@ -221,13 +222,34 @@ static NSString *reuseIdentifier = @"ms";
     PrivateChatItem *item = [PrivateChatItem new];
     item.chatContentType = 0;
     item.chatType = 0;
+    
+    
+    NSString *senderId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
+    NSString *revId = [NSString stringWithFormat:@"%@",dic[@"receiverid"]];
+    BAIRUITECH_BRAccount *account = [BAIRUITECH_BRAccoutTool account];
+    
     NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
 //    message.text = content[@"msg"];
 //    message.from = content[@"nickName"];
 //    message.avatar = [NSString stringWithFormat:@"%@%@",ImageURL,content[@"userLogo"]];
-    item.nickName = content[@"nickName"];
+    
+    if ([revId isEqualToString:account.userId]) {
+        
+        item.nickName = content[@"nickName"];
+        item.userId = senderId;
+        
+    }else{
+        
+        item.nickName = content[@"toNickName"];
+        item.userId = revId;
+
+    }
+    
+    
+    
+    item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
     item.content = content[@"msg"];
-    item.userId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
+    item.userLogo = content[@"userLogo"];
     [self.list addObject:item];
     [self.tableView reloadData];
 }
@@ -282,9 +304,10 @@ static NSString *reuseIdentifier = @"ms";
     
     MsCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     PrivateChatItem *dic =self.list[indexPath.row];
-    [cell.logo sd_setImageWithURL:[NSURL URLWithString:dic.userLogo] placeholderImage:[UIImage imageNamed:@"112"]];
+    [cell.logo sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",ImageURL,dic.userLogo]] placeholderImage:[UIImage imageNamed:@"头像"]];
     cell.titlelab.text = dic.nickName;
     cell.sublab.text = dic.content;
+    [cell.arrowbtn setTitle:dic.time forState:UIControlStateNormal];
     return cell;
 }
 

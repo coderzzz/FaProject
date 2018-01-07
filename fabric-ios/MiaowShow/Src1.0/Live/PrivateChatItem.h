@@ -17,4 +17,11 @@
 @property (nonatomic, copy) NSString *userLogo;
 @property (nonatomic, copy) NSString *content;
 
+@property (nonatomic, copy) NSString *time;
+
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) UIImage *sysLogo;
+
+
 @end

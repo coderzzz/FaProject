@@ -11,6 +11,10 @@
 		2255E7EF1FEF436A0065572A /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E7ED1FEF436A0065572A /* PostController.m */; };
 		2255E7F01FEF436A0065572A /* PostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E7EE1FEF436A0065572A /* PostController.xib */; };
 		2255E7F41FEF4E380065572A /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E7F31FEF4E380065572A /* PPNumberButton.m */; };
+		2255E8202001CE8D0065572A /* MCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E81E2001CE8D0065572A /* MCell.m */; };
+		2255E8212001CE8D0065572A /* MCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E81F2001CE8D0065572A /* MCell.xib */; };
+		2255E825200202870065572A /* SysMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E823200202870065572A /* SysMsgCell.m */; };
+		2255E826200202870065572A /* SysMsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E824200202870065572A /* SysMsgCell.xib */; };
 		22AF11E61FD3A948002A32E3 /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF11E51FD3A948002A32E3 /* TabbarViewController.m */; };
 		22AF11EF1FD3AA0C002A32E3 /* ORDERViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF11ED1FD3AA0C002A32E3 /* ORDERViewController.m */; };
 		22AF11F01FD3AA0C002A32E3 /* ORDERViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AF11EE1FD3AA0C002A32E3 /* ORDERViewController.xib */; };
@@ -381,6 +385,12 @@
 		2255E7EE1FEF436A0065572A /* PostController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostController.xib; sourceTree = "<group>"; };
 		2255E7F21FEF4E380065572A /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		2255E7F31FEF4E380065572A /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		2255E81D2001CE8D0065572A /* MCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCell.h; sourceTree = "<group>"; };
+		2255E81E2001CE8D0065572A /* MCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCell.m; sourceTree = "<group>"; };
+		2255E81F2001CE8D0065572A /* MCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCell.xib; sourceTree = "<group>"; };
+		2255E822200202870065572A /* SysMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysMsgCell.h; sourceTree = "<group>"; };
+		2255E823200202870065572A /* SysMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysMsgCell.m; sourceTree = "<group>"; };
+		2255E824200202870065572A /* SysMsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SysMsgCell.xib; sourceTree = "<group>"; };
 		22AF11E41FD3A948002A32E3 /* TabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
 		22AF11E51FD3A948002A32E3 /* TabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		22AF11EC1FD3AA0C002A32E3 /* ORDERViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDERViewController.h; sourceTree = "<group>"; };
@@ -2081,6 +2091,9 @@
 				FEFF5D331FD1399A00A3F046 /* ALinHotViewController.m */,
 				FEFF5D341FD1399A00A3F046 /* ALinNewStarViewController.h */,
 				FEFF5D351FD1399A00A3F046 /* ALinNewStarViewController.m */,
+				2255E81D2001CE8D0065572A /* MCell.h */,
+				2255E81E2001CE8D0065572A /* MCell.m */,
+				2255E81F2001CE8D0065572A /* MCell.xib */,
 				FEFF5D361FD1399A00A3F046 /* BlackCell.h */,
 				FEFF5D371FD1399A00A3F046 /* BlackCell.m */,
 				FEFF5D381FD1399A00A3F046 /* BlackCell.xib */,
@@ -2096,6 +2109,9 @@
 				FEFF5D421FD1399A00A3F046 /* MsHeadCell.xib */,
 				FEFF5D431FD1399A00A3F046 /* SystemMsgViewController.h */,
 				FEFF5D441FD1399A00A3F046 /* SystemMsgViewController.m */,
+				2255E822200202870065572A /* SysMsgCell.h */,
+				2255E823200202870065572A /* SysMsgCell.m */,
+				2255E824200202870065572A /* SysMsgCell.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -2385,6 +2401,7 @@
 				FEFF5E561FD1399A00A3F046 /* SettingCell.xib in Resources */,
 				FEFF5E651FD1399A00A3F046 /* SearchView.xib in Resources */,
 				FEFF5E591FD1399A00A3F046 /* SexViewController.xib in Resources */,
+				2255E826200202870065572A /* SysMsgCell.xib in Resources */,
 				FEFF5E5B1FD1399A00A3F046 /* UpCell.xib in Resources */,
 				FE7096C71FD7802D004673CA /* AlipaySDK.bundle in Resources */,
 				FEFF5DAC1FD1399A00A3F046 /* AreaCell.xib in Resources */,
@@ -2414,6 +2431,7 @@
 				22AF11FF1FD3AA55002A32E3 /* MINEViewController.xib in Resources */,
 				FE5EB95B1FD91442005E3C48 /* TagController.xib in Resources */,
 				FEFEE0221FF0A005004015F4 /* LiveWordCell.xib in Resources */,
+				2255E8212001CE8D0065572A /* MCell.xib in Resources */,
 				FEFF5DC71FD1399A00A3F046 /* PopCell.xib in Resources */,
 				FE7096AA1FD6381F004673CA /* Address.plist in Resources */,
 				FEFF5DDD1FD1399A00A3F046 /* MallDeatilViewController.xib in Resources */,
@@ -2481,7 +2499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EABFBD1F97C1CF5DA8973C92 /* [CP] Copy Pods Resources */ = {
@@ -2556,6 +2574,7 @@
 				FEFF5DB51FD1399A00A3F046 /* FabricContentViewController.m in Sources */,
 				FEFF5DFE1FD1399A00A3F046 /* EaseBubbleView+Gif.m in Sources */,
 				FE4148EB1FE39DCA00635D9B /* JudgeController.m in Sources */,
+				2255E8202001CE8D0065572A /* MCell.m in Sources */,
 				FEFF5BCA1FD0F87500A3F046 /* UITableView+Addition.m in Sources */,
 				FEFF5DF71FD1399A00A3F046 /* EMMessage.m in Sources */,
 				FEFF5DDC1FD1399A00A3F046 /* MallDeatilViewController.m in Sources */,
@@ -2576,6 +2595,7 @@
 				FEFF5DE61FD1399A00A3F046 /* EMAudioPlayerUtil.m in Sources */,
 				22AF11F41FD3AA2B002A32E3 /* DISViewController.m in Sources */,
 				FEFF5DC51FD1399A00A3F046 /* HomeReusableView.m in Sources */,
+				2255E825200202870065572A /* SysMsgCell.m in Sources */,
 				FEFF5C1E1FD1310400A3F046 /* BAIRUITECH_GrowingInputView.m in Sources */,
 				FEFF5E6B1FD1399A00A3F046 /* SearchDetailViewController2.m in Sources */,
 				FEFF5E641FD1399A00A3F046 /* SearchView.m in Sources */,
