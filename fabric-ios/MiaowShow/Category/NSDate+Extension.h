@@ -30,6 +30,10 @@
 + (NSInteger)gainMinuteWithDate:(NSDate *)date;
 
 
++ (NSString *)monthWithTimesTamp:(NSString *)timeTamp;
++ (NSString *)hourWithTimesTamp:(NSString *)timeTamp;
+
+
 /** 将时间字符串转为自定义的格式 */
 + (NSString *)stringConvertWithDateString:(NSString *)dateString formatter:(NSString *)formatter;
 

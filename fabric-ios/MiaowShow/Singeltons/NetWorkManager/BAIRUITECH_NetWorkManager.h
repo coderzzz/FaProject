@@ -150,6 +150,8 @@ typedef void(^downloadProgress)(float progress);
 
 +(void)FinanceLiveShow_mess:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
 
++(void)FinanceLiveShow_od:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
+
 +(void)FinanceLiveShow_fans:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;
 
 +(void)FinanceLiveShow_follow:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock;

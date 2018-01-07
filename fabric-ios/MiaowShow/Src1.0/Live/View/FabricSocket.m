@@ -197,6 +197,14 @@
         BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
         if ([user.userId isEqualToString:senderid] && type >1) {
             
+            if ([cmd isEqualToString:@"801"] || [cmd isEqualToString:@"701"]) {
+                
+                [self.messages addObject:dic];
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"FSDidReceiveMessage" object:message];
+                return;
+            }
+            
+            
         }else{
             
             if ([cmd isEqualToString:@"601"] && recv.length>0) {

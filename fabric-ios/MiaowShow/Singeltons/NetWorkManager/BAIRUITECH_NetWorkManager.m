@@ -538,6 +538,14 @@
     [BAIRUITECH_NetWorkManager requestWithType:HttpRequestTypePost withUrlString:@"/message/getMessList" withParaments:param withSuccessBlock:successBlock withFailureBlock:failureBlock progress:nil];
     
 }
+
++(void)FinanceLiveShow_od:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock{
+    
+    [BAIRUITECH_NetWorkManager requestWithType:HttpRequestTypeGet withUrlString:@"/buyask/getBuyAskDetail" withParaments:param withSuccessBlock:successBlock withFailureBlock:failureBlock progress:nil];
+    
+}
+
+
 //fensi列表
 +(void)FinanceLiveShow_fans:(id)param withSuccessBlock:(requestSuccess)successBlock withFailureBlock:(requestFailure)failureBlock{
     

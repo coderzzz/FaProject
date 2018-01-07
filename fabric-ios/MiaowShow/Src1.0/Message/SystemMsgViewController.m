@@ -77,7 +77,7 @@ static NSString *reuseIdentifier = @"sym";
     if ([cmd isEqualToString:@"701"]) {
             
        NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
-       NSString *time = [NSString stringWithFormat:@"%@",content[@"time"]];
+       NSString *time = [NSString stringWithFormat:@"%@",dic[@"time"]];
         NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:content];
         [dic setValue:time?time:@"" forKey:@"time"];
         if (content) {

@@ -24,4 +24,8 @@
 @property (nonatomic, strong) UIImage *sysLogo;
 
 
+@property (nonatomic, strong) NSString *askId;
+
+
+
 @end

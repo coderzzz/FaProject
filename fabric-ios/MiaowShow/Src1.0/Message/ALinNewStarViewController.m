@@ -10,6 +10,9 @@
 #import "MCell.h"
 #import "PrivateChatItem.h"
 #import "EaseMessageViewController.h"
+#import "SystemMsgViewController.h"
+#import "OrderMsgController.h"
+
 @interface ALinNewStarViewController ()
 
 @property(nonatomic, strong) NSMutableArray *lives;
@@ -96,6 +99,92 @@ static NSString *reuseIdentifier = @"m";
     NSString *revId = [NSString stringWithFormat:@"%@",dic[@"receiverid"]];
     NSString *senderId = [NSString stringWithFormat:@"%@",dic[@"senderid"]];
     NSString *cmd = [NSString stringWithFormat:@"%@",dic[@"cmd"]];
+    
+    if ([cmd isEqualToString:@"801"]) {
+        
+        NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
+        NSString *askID = [NSString stringWithFormat:@"%@",content[@"askId"]];
+        if (self.list.count>0) {
+            
+            for (PrivateChatItem *item in self.list) {
+                
+                if ([item.askId isEqualToString:askID]) {
+                    
+                    item.content = content[@"content"];
+                    item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+                    [self.tableView reloadData];
+                    return;
+                }
+                
+            }
+            
+            PrivateChatItem *item = [PrivateChatItem new];
+            item.content = content[@"content"];
+            item.askId = askID;
+            item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+            item.nickName = @"订单通知";
+            item.sysLogo = [UIImage imageNamed:@"订单通知"];
+            [self.list addObject:item];
+            [self.tableView reloadData];
+        }else{
+            
+            PrivateChatItem *item = [PrivateChatItem new];
+            item.content = content[@"content"];
+            item.askId = askID;
+            item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+            item.nickName = @"订单通知";
+            item.sysLogo = [UIImage imageNamed:@"订单通知"];
+            [self.list addObject:item];
+            [self.tableView reloadData];
+        }
+        
+        return;
+
+    }
+    //系统消息
+    if ([cmd isEqualToString:@"701"]) {
+        
+        NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
+        if (self.list.count>0) {
+            
+            for (PrivateChatItem *item in self.list) {
+                
+                if ([item.userId isEqualToString:@"-1"]) {
+                    
+                    item.content = content[@"content"];
+                    item.title = content[@"title"];
+                    item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+                    [self.tableView reloadData];
+                    return;
+                }
+                
+            }
+            
+            PrivateChatItem *item = [PrivateChatItem new];
+            item.content = content[@"content"];
+            item.title = content[@"title"];
+            item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+            item.userId = @"-1";
+            item.nickName = @"系统消息";
+            item.sysLogo = [UIImage imageNamed:@"系统消息-1"];
+            [self.list addObject:item];
+            [self.tableView reloadData];
+        }else{
+            
+            PrivateChatItem *item = [PrivateChatItem new];
+            item.content = content[@"content"];
+            item.title = content[@"title"];
+            item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
+            item.userId = @"-1";
+            item.nickName = @"系统消息";
+            item.sysLogo = [UIImage imageNamed:@"系统消息-1"];
+            [self.list addObject:item];
+            [self.tableView reloadData];
+        }
+        
+        return;
+        
+    }
     if (![revId isEqualToString:@"0"]) {
         
         if ([cmd isEqualToString:@"601"]) {
@@ -124,46 +213,10 @@ static NSString *reuseIdentifier = @"m";
         }
         
     }else{
-        //系统消息
-        if ([cmd isEqualToString:@"701"]) {
-            
-            NSDictionary *content = [self dictionaryWithJsonString:dic[@"content"]];
-            if (self.list.count>0) {
-                
-                for (PrivateChatItem *item in self.list) {
-                    
-                    if ([item.userId isEqualToString:@"-1"]) {
-                        
-                        item.content = content[@"content"];
-                        item.title = content[@"title"];
-                        item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
-                        [self.tableView reloadData];
-                        return;
-                    }
-                    
-                }
-                
-                PrivateChatItem *item = [PrivateChatItem new];
-                item.content = content[@"content"];
-                item.title = content[@"title"];
-                item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
-                item.userId = @"-1";
-                item.sysLogo = [UIImage imageNamed:@"系统消息-1"];
-                [self.list addObject:item];
-                [self.tableView reloadData];
-            }else{
-                
-                PrivateChatItem *item = [PrivateChatItem new];
-                item.content = content[@"content"];
-                item.title = content[@"title"];
-                item.time =[NSDate dateWithTimesTamp:[NSString stringWithFormat:@"%@000",dic[@"time"]]];
-                item.userId = @"-1";
-                item.sysLogo = [UIImage imageNamed:@"系统消息-1"];
-                [self.list addObject:item];
-                [self.tableView reloadData];
-            }
-            
-        }
+        
+        
+        
+
         
     }
 }
@@ -384,7 +437,7 @@ static NSString *reuseIdentifier = @"m";
     
     MCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     PrivateChatItem *dic =self.list[indexPath.row];
-    if ([dic.userId isEqualToString:@"-1"]) {
+    if ([dic.userId isEqualToString:@"-1"] || dic.askId.length>0) {
         
         cell.logo.image = dic.sysLogo;
         
@@ -407,8 +460,24 @@ static NSString *reuseIdentifier = @"m";
 
     if ([item.userId isEqualToString:@"-1"]){
         
+        SystemMsgViewController *vc = [[SystemMsgViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        
         
     }
+    else if (item.askId.length>0){
+        
+        OrderMsgController *vc = [[OrderMsgController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.orderId = item.askId;
+        [self.navigationController pushViewController:vc animated:YES];
+
+        
+        
+    }
+    
     else{
         
         EaseMessageViewController *chatVC =[[EaseMessageViewController alloc]initWithConversationChatter:@""];

@@ -108,6 +108,31 @@
     return confromTimespStr;
 }
 
+
++ (NSString *)monthWithTimesTamp:(NSString *)timeTamp{
+    
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[timeTamp longLongValue]/1000];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    dateFormatter.dateFormat = @"MM-dd";
+    
+    NSString *confromTimespStr = [dateFormatter stringFromDate:confromTimesp];
+    return confromTimespStr;
+}
+
++ (NSString *)hourWithTimesTamp:(NSString *)timeTamp{
+    
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[timeTamp longLongValue]/1000];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    dateFormatter.dateFormat = @"HH:mm";
+    
+    NSString *confromTimespStr = [dateFormatter stringFromDate:confromTimesp];
+    return confromTimespStr;
+}
+
+
+
 +(NSDate *)getPriousorLaterDateFromDate:(NSDate *)date withMonth:(int)month
 
 {

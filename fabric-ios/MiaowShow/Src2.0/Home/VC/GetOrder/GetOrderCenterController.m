@@ -109,29 +109,29 @@ static NSString *reuseIdentifier = @"centerc";
 
 - (void)getData{
     
-//    __weak  typeof(self) weakSelf = self;
-//    BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
-//    NSDictionary *dic = @{@"custId":user.userId,@"createTimeType":@(_timeT),@"orderAmtType":@(_priceT),@"pageNo":@(_pageN),@"pageSize":@"10"};
-//    [BAIRUITECH_NetWorkManager FinanceLiveShow_OrderList:dic withSuccessBlock:^(NSDictionary *object) {
-//        
-//        [weakSelf.tableView.mj_header endRefreshing];
-//        [weakSelf.tableView.mj_footer endRefreshing];
-//        if([object[@"ret"] intValue] == 0){
-//            
-//            [weakSelf.list addObjectsFromArray:[object[@"data"][@"askList"] mutableCopy]];
-//            [weakSelf.tableView reloadData];
-//            
-//        }else{
-//            
-//            [BAIRUITECH_BRTipView showTipTitle:object[@"msg"] delay:1];
-//        }
-//        
-//    } withFailureBlock:^(NSError *error) {
-//        
-//        YJLog(@"%@",error);
-//        [weakSelf.tableView.mj_header endRefreshing];
-//        [weakSelf.tableView.mj_footer endRefreshing];
-//    }];
+    __weak  typeof(self) weakSelf = self;
+    BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
+    NSDictionary *dic = @{@"custId":user.userId,@"createTimeType":@(_timeT),@"orderAmtType":@(_priceT),@"pageNo":@(_pageN),@"pageSize":@"10"};
+    [BAIRUITECH_NetWorkManager FinanceLiveShow_OrderList:dic withSuccessBlock:^(NSDictionary *object) {
+        
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+        if([object[@"ret"] intValue] == 0){
+            
+            [weakSelf.list addObjectsFromArray:[object[@"data"][@"askList"] mutableCopy]];
+            [weakSelf.tableView reloadData];
+            
+        }else{
+            
+            [BAIRUITECH_BRTipView showTipTitle:object[@"msg"] delay:1];
+        }
+        
+    } withFailureBlock:^(NSError *error) {
+        
+        YJLog(@"%@",error);
+        [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_footer endRefreshing];
+    }];
 }
 
 

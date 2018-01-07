@@ -15,6 +15,10 @@
 		2255E8212001CE8D0065572A /* MCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E81F2001CE8D0065572A /* MCell.xib */; };
 		2255E825200202870065572A /* SysMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E823200202870065572A /* SysMsgCell.m */; };
 		2255E826200202870065572A /* SysMsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E824200202870065572A /* SysMsgCell.xib */; };
+		2255E82A20020D520065572A /* OrderMsgController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E82820020D520065572A /* OrderMsgController.m */; };
+		2255E82B20020D520065572A /* OrderMsgController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E82920020D520065572A /* OrderMsgController.xib */; };
+		2255E82F200218230065572A /* OrderMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2255E82D200218230065572A /* OrderMsgCell.m */; };
+		2255E830200218230065572A /* OrderMsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2255E82E200218230065572A /* OrderMsgCell.xib */; };
 		22AF11E61FD3A948002A32E3 /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF11E51FD3A948002A32E3 /* TabbarViewController.m */; };
 		22AF11EF1FD3AA0C002A32E3 /* ORDERViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AF11ED1FD3AA0C002A32E3 /* ORDERViewController.m */; };
 		22AF11F01FD3AA0C002A32E3 /* ORDERViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AF11EE1FD3AA0C002A32E3 /* ORDERViewController.xib */; };
@@ -391,6 +395,12 @@
 		2255E822200202870065572A /* SysMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysMsgCell.h; sourceTree = "<group>"; };
 		2255E823200202870065572A /* SysMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SysMsgCell.m; sourceTree = "<group>"; };
 		2255E824200202870065572A /* SysMsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SysMsgCell.xib; sourceTree = "<group>"; };
+		2255E82720020D520065572A /* OrderMsgController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMsgController.h; sourceTree = "<group>"; };
+		2255E82820020D520065572A /* OrderMsgController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMsgController.m; sourceTree = "<group>"; };
+		2255E82920020D520065572A /* OrderMsgController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderMsgController.xib; sourceTree = "<group>"; };
+		2255E82C200218230065572A /* OrderMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderMsgCell.h; sourceTree = "<group>"; };
+		2255E82D200218230065572A /* OrderMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderMsgCell.m; sourceTree = "<group>"; };
+		2255E82E200218230065572A /* OrderMsgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderMsgCell.xib; sourceTree = "<group>"; };
 		22AF11E41FD3A948002A32E3 /* TabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
 		22AF11E51FD3A948002A32E3 /* TabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		22AF11EC1FD3AA0C002A32E3 /* ORDERViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDERViewController.h; sourceTree = "<group>"; };
@@ -2112,6 +2122,12 @@
 				2255E822200202870065572A /* SysMsgCell.h */,
 				2255E823200202870065572A /* SysMsgCell.m */,
 				2255E824200202870065572A /* SysMsgCell.xib */,
+				2255E82720020D520065572A /* OrderMsgController.h */,
+				2255E82820020D520065572A /* OrderMsgController.m */,
+				2255E82920020D520065572A /* OrderMsgController.xib */,
+				2255E82C200218230065572A /* OrderMsgCell.h */,
+				2255E82D200218230065572A /* OrderMsgCell.m */,
+				2255E82E200218230065572A /* OrderMsgCell.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -2451,6 +2467,7 @@
 				FEFF5E4E1FD1399A00A3F046 /* PersonCell.xib in Resources */,
 				FEFF5E501FD1399A00A3F046 /* PersonCenterViewController.xib in Resources */,
 				FEFF5DB31FD1399A00A3F046 /* AskCell.xib in Resources */,
+				2255E82B20020D520065572A /* OrderMsgController.xib in Resources */,
 				FEFF5DD21FD1399A00A3F046 /* BAIRUITECH_AudienceSendGiftView.xib in Resources */,
 				FE4148F11FE76B7A00635D9B /* CancelFObjController.xib in Resources */,
 				FEFF5DCA1FD1399A00A3F046 /* SearchDetailViewController.xib in Resources */,
@@ -2463,6 +2480,7 @@
 				FEFF5E1A1FD1399A00A3F046 /* ALinUserView.xib in Resources */,
 				FEFF5E481FD1399A00A3F046 /* MainContentCell.xib in Resources */,
 				FE5EB9601FD914B7005E3C48 /* GetOrderCenterController.xib in Resources */,
+				2255E830200218230065572A /* OrderMsgCell.xib in Resources */,
 				FEFF5E441FD1399A00A3F046 /* InputNameCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2564,6 +2582,7 @@
 				FEFF5DB21FD1399A00A3F046 /* AskCell.m in Sources */,
 				FEFF5DCF1FD1399A00A3F046 /* ALinUser.m in Sources */,
 				FE41485D1FDE87B500635D9B /* CancelObjCell.m in Sources */,
+				2255E82F200218230065572A /* OrderMsgCell.m in Sources */,
 				FEFF5DFF1FD1399A00A3F046 /* EaseBubbleView+Image.m in Sources */,
 				FEFF5DE01FD1399A00A3F046 /* MsgViewController.m in Sources */,
 				FE5EB9481FD91442005E3C48 /* AddNewAddressController.m in Sources */,
@@ -2611,6 +2630,7 @@
 				FEFF5BC21FD0F87500A3F046 /* NSDate+Extension.m in Sources */,
 				2255E7EF1FEF436A0065572A /* PostController.m in Sources */,
 				FEFF5E041FD1399A00A3F046 /* EaseBubbleView.m in Sources */,
+				2255E82A20020D520065572A /* OrderMsgController.m in Sources */,
 				FEFF5E581FD1399A00A3F046 /* SexViewController.m in Sources */,
 				22AF11FE1FD3AA55002A32E3 /* MINEViewController.m in Sources */,
 				FEFF5DEE1FD1399A00A3F046 /* wav.mm in Sources */,
