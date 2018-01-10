@@ -8,6 +8,7 @@
 
 #import "GetOController.h"
 #import "GetOrderDetailController.h"
+#import "EaseMessageReadManager.h"
 #import "GOderDCell.h"
 @interface GetOController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -173,7 +174,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (indexPath.row != 0) {
+        
+        [[EaseMessageReadManager defaultManager] showBrowserWithImages:@[[NSURL URLWithString:self.list[indexPath.row -1]]]];
+    }
     
 }
 

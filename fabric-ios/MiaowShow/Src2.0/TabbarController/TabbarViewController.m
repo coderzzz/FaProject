@@ -29,18 +29,32 @@
     [super viewDidLoad];
     
     
-    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+//    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
     
     [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateNormal];
     
     //点击时候的字体颜色
     [[UITabBarItem appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:Color} forState:UIControlStateSelected];
     
-    [[UITabBar appearance] setTintColor:Color];
-
+//    [[UITabBar appearance] setTintColor:Color];
+    [self.tabBar setBackgroundImage:[UIImage imageNamed:@"w"]];
     self.delegate = self;
     [self setup];
     [self.view bringSubviewToFront:button];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didReceiveMessage) name:@"FSDidReceiveMessage" object:nil];
+}
+
+- (void)didReceiveMessage{
+    
+    
+    if (self.selectedIndex != 3) {
+        
+        UITabBarItem *item = self.tabBar.items[3];
+        item.image = [[UIImage imageNamed:@"消息11"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -133,9 +147,11 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    if ([tabBarController.childViewControllers indexOfObject:viewController] == tabBarController.childViewControllers.count-3) {
+    if ([tabBarController.childViewControllers indexOfObject:viewController] == 3) {
         
-//        [self show];
+        viewController.tabBarItem.image =[[UIImage imageNamed:@"mark"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        UITabBarItem *item = self.tabBar.items[3];
+//        item.image = [UIImage imageNamed:@"mark"];
         return YES;
     }
     return YES;

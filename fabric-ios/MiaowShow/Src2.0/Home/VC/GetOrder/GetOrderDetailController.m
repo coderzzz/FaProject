@@ -10,6 +10,7 @@
 #import "CancelFObjController.h"
 #import "UpObjImageController.h"
 #import "GOderDCell.h"
+#import "EaseMessageReadManager.h"
 #import "EaseMessageViewController.h"
 @interface GetOrderDetailController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,6 +24,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 @property (weak, nonatomic) IBOutlet UILabel *tileLab;
 @property (strong, nonatomic) NSMutableArray *list;
+@property (weak, nonatomic) IBOutlet UIView *toolView;
+@property (weak, nonatomic) IBOutlet UILabel *statueName;
+@property (weak, nonatomic) IBOutlet UIButton *upLoadBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bl;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tl;
 @end
 
 @implementation GetOrderDetailController
@@ -30,12 +36,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"找样详情";
+//    self.title = @"找样详情";
     
     self.list = [NSMutableArray array];
     
     [self.tableView setTableHeaderView:self.headView];
     [self.tableView registerNib:[UINib nibWithNibName:@"GOderDCell" bundle:nil] forCellReuseIdentifier:@"d"];
+    
+    
+    if ([self.type isEqualToString:@"1"]) {
+        
+        self.statueName.text = _dic[@"buyStatusName"];
+        self.toolView.hidden = YES;
+        self.title = @"委托详情";
+//        NSLayoutConstraint *redRightCos = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:1000];
+//         self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+//        [self.view addConstraint:redRightCos];
+//        [self.toolView removeFromSuperview];
+        self.bl.priority = 1000;
+        self.tl.priority = 100;
+    }else if ([self.type isEqualToString:@"2"]){
+        
+        self.statueName.text = _dic[@"buyStatusName"];
+        self.upLoadBtn.hidden= YES;
+        self.title = @"找样详情";
+    }else{
+        
+        self.title = @"找样详情";
+    }
     
     self.nameLab.text = [NSString stringWithFormat:@"收货人：%@",_dic[@"buyer"]];
     self.phone.text = [NSString stringWithFormat:@"%@",_dic[@"phone"]];
@@ -199,7 +227,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
+    if (indexPath.row != 0) {
+        
+        [[EaseMessageReadManager defaultManager] showBrowserWithImages:@[[NSURL URLWithString:self.list[indexPath.row -1]]]];
+    }
 }
 
 

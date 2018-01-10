@@ -12,14 +12,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetOrderDetailController">
             <connections>
                 <outlet property="addressLab" destination="aCX-xr-ol6" id="vw4-vy-hT9"/>
+                <outlet property="bl" destination="KQe-De-qHQ" id="I9O-gd-x8R"/>
                 <outlet property="dateLab" destination="SZK-q4-JYV" id="u2n-mG-Nor"/>
                 <outlet property="headBtn" destination="waB-pp-cnt" id="UJu-3e-cn0"/>
                 <outlet property="headView" destination="eds-mN-sEB" id="nuU-uA-R2h"/>
                 <outlet property="moneyLab" destination="Zlq-kK-YUE" id="ATl-RI-BMr"/>
                 <outlet property="nameLab" destination="Tdh-hC-aKb" id="tu9-uI-dEK"/>
                 <outlet property="phone" destination="8ye-IA-8H8" id="Pfg-1a-Jbg"/>
+                <outlet property="statueName" destination="xnj-Yt-nKs" id="mDW-L2-2S7"/>
                 <outlet property="tableView" destination="PlI-vC-qKs" id="8eH-bw-CCp"/>
                 <outlet property="tileLab" destination="VXf-4g-RPl" id="KjM-8B-hoL"/>
+                <outlet property="tl" destination="0wo-RH-cIe" id="51G-sa-4Lo"/>
+                <outlet property="toolView" destination="eLL-Ek-yQu" id="KBw-Ec-V7Q"/>
+                <outlet property="upLoadBtn" destination="l2i-DG-YLh" id="Twr-BM-t2w"/>
                 <outlet property="userNameLab" destination="F3S-cn-JZr" id="zTg-pv-aPu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -107,13 +112,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="eLL-Ek-yQu" firstAttribute="top" secondItem="PlI-vC-qKs" secondAttribute="bottom" id="0wo-RH-cIe"/>
                 <constraint firstItem="eLL-Ek-yQu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Ax-W4-tDx"/>
                 <constraint firstItem="PlI-vC-qKs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AhN-Da-Eke"/>
+                <constraint firstAttribute="bottom" secondItem="PlI-vC-qKs" secondAttribute="bottom" priority="900" id="KQe-De-qHQ"/>
                 <constraint firstAttribute="trailing" secondItem="eLL-Ek-yQu" secondAttribute="trailing" id="WtR-zP-Vke"/>
                 <constraint firstAttribute="bottom" secondItem="eLL-Ek-yQu" secondAttribute="bottom" id="XTQ-UK-qAC"/>
                 <constraint firstItem="PlI-vC-qKs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zdm-Ek-zf2"/>
                 <constraint firstAttribute="trailing" secondItem="PlI-vC-qKs" secondAttribute="trailing" id="iX0-h0-Dmm"/>
-                <constraint firstItem="eLL-Ek-yQu" firstAttribute="top" secondItem="PlI-vC-qKs" secondAttribute="bottom" id="wR3-6F-26C"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <point key="canvasLocation" x="24.5" y="52.5"/>
@@ -133,7 +139,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已接单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnj-Yt-nKs">
-                            <rect key="frame" x="44" y="40" width="141" height="21"/>
+                            <rect key="frame" x="44" y="40" width="153" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

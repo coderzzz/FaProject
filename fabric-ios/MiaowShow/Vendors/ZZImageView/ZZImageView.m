@@ -8,6 +8,7 @@
 
 #import "ZZImageView.h"
 #import "ZZImageCell.h"
+#import "EaseMessageReadManager.h"
 #import "CustomFlowLayout.h"
 @interface ZZImageView()<UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -126,6 +127,21 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (!self.canDel) {
+        
+        NSMutableArray *images = [NSMutableArray array];
+        for (ZZItem *tag in self.list) {
+            
+            if (tag.image) {
+                
+                [images addObject:tag.image];
+            }else if ([tag.imageUrl hasPrefix:@"http"]){
+                
+                [images addObject:tag.imageUrl];
+            }
+            
+        }
+        
+    [[EaseMessageReadManager defaultManager] showBrowserWithImages:images];
         
         return;
     }

@@ -11,6 +11,7 @@
 #import "DoneObjController.h"
 #import "LookObjController.h"
 #import "PayTypeViewController.h"
+#import "GetOrderDetailController.h"
 #import "AddPriceController.h"
 #import "JudgeController.h"
 #import "FabricWebViewController.h"
@@ -559,7 +560,10 @@ static NSString *const FabricLiveCellID = @"gr";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
     NSDictionary *dic = self.list[indexPath.row];
-
+    GetOrderDetailController *vc = [[GetOrderDetailController alloc]init];
+    vc.dic = dic;
+    vc.type = @"1";
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

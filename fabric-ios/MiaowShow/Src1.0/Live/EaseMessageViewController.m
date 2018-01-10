@@ -183,8 +183,6 @@ typedef enum : NSUInteger {
                         message.body = body;
                         message.from = content[@"nickName"];
                         NSArray *ary = [content[@"msg"] componentsSeparatedByString:@"&"];
-                        
-                        
                         NSData *data = [NSData dataWithContentsOfURL:
                                         [NSURL URLWithString:[NSString stringWithFormat:@"%@",ary.firstObject]]];
                         NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.amr",dic[@"time"]]];

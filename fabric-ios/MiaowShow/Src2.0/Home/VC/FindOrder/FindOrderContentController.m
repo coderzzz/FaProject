@@ -17,6 +17,7 @@
 #import "UpObjImageController.h"
 #import "EaseMessageViewController.h"
 #import "PostController.h"
+#import "GetOrderDetailController.h"
 // Models
 // Views
 
@@ -455,7 +456,10 @@ static NSString *const FabricLiveCellID = @"gr";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *dic = self.list[indexPath.row];
-    
+    GetOrderDetailController *vc = [[GetOrderDetailController alloc]init];
+    vc.dic = dic;
+    vc.type = @"2";
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

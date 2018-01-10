@@ -10,4 +10,5 @@
 
 @interface GetOrderDetailController : BaseViewController
 @property (nonatomic, copy) NSDictionary *dic;
+@property (nonatomic, copy) NSString *type;
 @end

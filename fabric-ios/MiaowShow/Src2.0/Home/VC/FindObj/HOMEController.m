@@ -90,7 +90,7 @@ static NSString *const HomeHeadViewID = @"homeres";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.list = @[@"委托找样",@"抢单中心",@"我要供样",@"我的钱包",@"委托订单",@"找样订单",@"客服在线",@"纺织世界",@"互动直播"].mutableCopy;
+    self.list = @[@"委托找样",@"抢单中心",@"我要供样",@"委托订单",@"找样订单",@"在线商城",@"纺织世界",@"互动直播",@"客服在线"].mutableCopy;
     self.navigationItem.title = @"全球面料网";
     adList = [NSArray array];
 //    [self.collectionView reloadData];
@@ -313,38 +313,40 @@ static NSString *const HomeHeadViewID = @"homeres";
         return;
     }
     
+    
+    
     if (indexPath.row == 3) {
-        
-        BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
-        FabricWebViewController *vc = [[FabricWebViewController alloc]init];
-        vc.strUrl = [NSString stringWithFormat:@"http://wap.fabric.cn/wap/fmsBusi/assets.html?userId=%@&token=%@",user.userId,user.token];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-        return;
-    }
-    
-    
-    
-    if (indexPath.row == 4) {
         
         GetOrderController*vc = [[GetOrderController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
-    if (indexPath.row == 5) {
+    if (indexPath.row ==4) {
         
         FindOrderController*vc = [[FindOrderController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
-    if (indexPath.row == 6) {
+    
+    
+    if (indexPath.row == 5) {
+        
+        BAIRUITECH_BRAccount *user = [BAIRUITECH_BRAccoutTool account];
+        FabricWebViewController *vc = [[FabricWebViewController alloc]init];
+        vc.strUrl = [NSString stringWithFormat:@"http://wap.fabric.cn/wap/index.html?userId=%@&token=%@",user.userId,user.token];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+    
+    if (indexPath.row == 8) {
         
         [self chatWithAgent];
         return;
     }
-    if (indexPath.row == 7) {
+    if (indexPath.row == 6) {
         
         LiveWordController *vc = [[LiveWordController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
@@ -352,7 +354,7 @@ static NSString *const HomeHeadViewID = @"homeres";
         return;
     }
     
-    if (indexPath.row == 8) {
+    if (indexPath.row ==7) {
         
         // 判断是否有摄像头
         if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){

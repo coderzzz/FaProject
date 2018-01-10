@@ -136,9 +136,14 @@ static EaseMessageReadManager *detailInstance = nil;
             }
             else if ([object isKindOfClass:[NSString class]])
             {
-                
+                 NSString *url = (NSString *)object;
+                 photo = [MWPhoto photoWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",url]]];
             }
-            [photoArray addObject:photo];
+            if (photo) {
+                
+                [photoArray addObject:photo];
+            }
+            
         }
         
         self.photos = photoArray;
