@@ -78,11 +78,11 @@ static NSString *reuseIdentifier = @"ms";
     self.line.backgroundColor = MainColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(firstLoad)];
-    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        
-        [self loadMore];
-    }];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(firstLoad)];
+//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+//        
+//        [self loadMore];
+//    }];
     
 //    [self.tableView.mj_header beginRefreshing];
     

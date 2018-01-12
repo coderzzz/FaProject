@@ -147,7 +147,7 @@
     
     NSDictionary *dic=@{@"custId":user.userId,
                         @"priceId":_dic[@"priceId"],
-                        @"descriptions":_noteTextView.text,
+                        @"descriptions":[_noteTextView.text isEqualToString:@"选填备注"]?@"":_noteTextView.text,
                         @"mpImages":bossUrls,
                         @"sampleImages":imgUrls
                         };

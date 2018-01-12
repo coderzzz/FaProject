@@ -462,7 +462,9 @@ static NSString *const FabricLiveCellID = @"gr";
         
         cell.gtLab.text = [NSString stringWithFormat:@"接单时间:%@",[NSDate dateWithTimesTamp:dic[@"orderTakeTime"]]];
     }
-    
+    else{
+        cell.gtLab.text = nil;
+    }
     
    
     if ([dic.allKeys containsObject:@"lookManNickName"]) {

@@ -244,9 +244,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sK-YZ-wxs">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sK-YZ-wxs">
                             <rect key="frame" x="14" y="12" width="49" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="49" id="enR-sy-Owm"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -266,9 +268,8 @@
                                 <action selector="getWord:" destination="-1" eventType="touchUpInside" id="dx7-u4-xfc"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ysb-Eo-88X">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ysb-Eo-88X">
                             <rect key="frame" x="71" y="8" width="124" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -278,10 +279,17 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="0gd-rM-35f"/>
                         <constraint firstAttribute="bottom" secondItem="RA4-8b-8rv" secondAttribute="bottom" id="4dy-ed-l2F"/>
+                        <constraint firstItem="DM7-Hf-uKR" firstAttribute="leading" secondItem="Ysb-Eo-88X" secondAttribute="trailing" constant="70" id="5jx-us-nPP"/>
                         <constraint firstItem="RA4-8b-8rv" firstAttribute="leading" secondItem="DYG-CV-aEL" secondAttribute="leading" constant="8" id="F9G-DW-wYG"/>
+                        <constraint firstItem="RA4-8b-8rv" firstAttribute="top" secondItem="2sK-YZ-wxs" secondAttribute="bottom" constant="11" id="NOz-Pe-jqC"/>
                         <constraint firstAttribute="trailing" secondItem="DM7-Hf-uKR" secondAttribute="trailing" constant="20" id="Qaf-2l-gmt"/>
+                        <constraint firstItem="Ysb-Eo-88X" firstAttribute="leading" secondItem="2sK-YZ-wxs" secondAttribute="trailing" constant="8" symbolic="YES" id="R6t-fM-AZN"/>
+                        <constraint firstItem="2sK-YZ-wxs" firstAttribute="centerY" secondItem="Ysb-Eo-88X" secondAttribute="centerY" id="TNG-9O-zq5"/>
                         <constraint firstAttribute="trailing" secondItem="RA4-8b-8rv" secondAttribute="trailing" constant="8" id="X4t-Dy-HLN"/>
+                        <constraint firstItem="RA4-8b-8rv" firstAttribute="top" secondItem="Ysb-Eo-88X" secondAttribute="bottom" constant="6" id="ZxB-xU-Hdz"/>
                         <constraint firstItem="RA4-8b-8rv" firstAttribute="top" secondItem="DM7-Hf-uKR" secondAttribute="bottom" constant="7" id="hg8-9o-21w"/>
+                        <constraint firstItem="DM7-Hf-uKR" firstAttribute="centerY" secondItem="2sK-YZ-wxs" secondAttribute="centerY" id="sQT-De-G9p"/>
+                        <constraint firstItem="2sK-YZ-wxs" firstAttribute="leading" secondItem="DYG-CV-aEL" secondAttribute="leading" constant="14" id="xLO-sc-Hh2"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-Uj-47k">
@@ -301,23 +309,25 @@
                     <rect key="frame" x="9" y="145" width="356" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击上面“同意”按钮，即表示你同意《找布人协议》" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icg-Jz-7Iq">
-                    <rect key="frame" x="39" y="445" width="296" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="296" id="QuQ-tH-joq"/>
-                        <constraint firstAttribute="height" constant="21" id="h6A-9r-7Jp"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Si-Iv-NvZ">
+                    <rect key="frame" x="33" y="436" width="310" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <state key="normal" title="点击上面“提交”按钮，即表示你同意《找布人协议》">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="read:" destination="-1" eventType="touchUpInside" id="wEW-7n-LB8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="DYG-CV-aEL" firstAttribute="top" secondItem="krk-uu-Mey" secondAttribute="bottom" constant="1" id="016-QR-cxR"/>
-                <constraint firstItem="icg-Jz-7Iq" firstAttribute="top" secondItem="3e9-Uj-47k" secondAttribute="bottom" constant="8" id="2u6-yu-YVF"/>
+                <constraint firstItem="2Si-Iv-NvZ" firstAttribute="top" secondItem="DYG-CV-aEL" secondAttribute="bottom" constant="64" id="448-DJ-f81"/>
+                <constraint firstAttribute="bottom" secondItem="3e9-Uj-47k" secondAttribute="bottom" constant="49" id="4Wf-Xz-exB"/>
                 <constraint firstItem="krk-uu-Mey" firstAttribute="leading" secondItem="h66-Wg-B03" secondAttribute="leading" id="DmB-Qu-LNO"/>
                 <constraint firstItem="H6A-dN-nWm" firstAttribute="leading" secondItem="h66-Wg-B03" secondAttribute="leading" constant="9" id="GV0-Qf-p3z"/>
+                <constraint firstItem="3e9-Uj-47k" firstAttribute="trailing" secondItem="2Si-Iv-NvZ" secondAttribute="trailing" id="HKL-zT-zTy"/>
                 <constraint firstItem="3e9-Uj-47k" firstAttribute="top" secondItem="DYG-CV-aEL" secondAttribute="bottom" constant="30" id="Kfl-G8-4I4"/>
                 <constraint firstAttribute="trailing" secondItem="LDQ-XO-hwo" secondAttribute="trailing" id="NYp-8d-vkC"/>
                 <constraint firstItem="krk-uu-Mey" firstAttribute="top" secondItem="H6A-dN-nWm" secondAttribute="bottom" constant="8" id="OR5-xt-6B8"/>
@@ -329,10 +339,10 @@
                 <constraint firstItem="H6A-dN-nWm" firstAttribute="top" secondItem="LDQ-XO-hwo" secondAttribute="bottom" constant="8" id="Zuu-iX-Yvz"/>
                 <constraint firstItem="3e9-Uj-47k" firstAttribute="centerX" secondItem="h66-Wg-B03" secondAttribute="centerX" id="dO8-hQ-i1l"/>
                 <constraint firstAttribute="trailing" secondItem="OtZ-zP-9Eq" secondAttribute="trailing" id="fkA-Da-mVO"/>
+                <constraint firstItem="3e9-Uj-47k" firstAttribute="leading" secondItem="2Si-Iv-NvZ" secondAttribute="leading" id="hZL-kM-5ul"/>
+                <constraint firstAttribute="bottom" secondItem="2Si-Iv-NvZ" secondAttribute="bottom" constant="20" id="hkP-CO-jEo"/>
                 <constraint firstAttribute="trailing" secondItem="krk-uu-Mey" secondAttribute="trailing" id="juh-9V-cP9"/>
-                <constraint firstItem="icg-Jz-7Iq" firstAttribute="centerX" secondItem="h66-Wg-B03" secondAttribute="centerX" id="pXo-1k-JvO"/>
                 <constraint firstAttribute="trailing" secondItem="DYG-CV-aEL" secondAttribute="trailing" id="qHA-yp-l2U"/>
-                <constraint firstAttribute="bottom" secondItem="icg-Jz-7Iq" secondAttribute="bottom" constant="20" id="tXl-bB-aAO"/>
                 <constraint firstItem="DYG-CV-aEL" firstAttribute="leading" secondItem="h66-Wg-B03" secondAttribute="leading" id="uLp-g6-NZO"/>
                 <constraint firstAttribute="trailing" secondItem="H6A-dN-nWm" secondAttribute="trailing" constant="10" id="vRl-dV-YKh"/>
                 <constraint firstItem="P5w-6o-sN2" firstAttribute="top" secondItem="h66-Wg-B03" secondAttribute="top" id="zJ3-VU-Bu4"/>

@@ -383,6 +383,9 @@ static NSString *const FabricLiveCellID = @"gr";
     if ([dic.allKeys containsObject:@"orderTakeTime"]) {
         
         cell.gtLab.text = [NSString stringWithFormat:@"接单时间:%@",[NSDate dateWithTimesTamp:dic[@"orderTakeTime"]]];
+    }else{
+        
+        cell.gtLab.text =nil;
     }
     
 //    

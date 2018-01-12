@@ -8,6 +8,7 @@
 
 #import "BeFinderController.h"
 #import "WYGenderPickerView.h"
+#import "FabricWebViewController.h"
 #define validCodeTime 60
 @interface BeFinderController ()
 @property (strong, nonatomic) IBOutlet UIView *contentView;
@@ -54,6 +55,15 @@
     }];
     
 }
+
+- (IBAction)read:(id)sender {
+    
+    
+    FabricWebViewController *vc = [[FabricWebViewController alloc]init];
+    vc.strUrl = @"http://wap.fabric.cn/wap/platrules.html";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)loadDatas{
     
     

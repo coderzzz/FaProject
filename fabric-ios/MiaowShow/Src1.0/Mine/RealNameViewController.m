@@ -146,8 +146,7 @@
         [self showHint:object[@"msg"]];
         if([object[@"ret"] intValue] == 0){
             
-            [self.navigationController popViewControllerAnimated:YES];
-            
+             [self dismissViewControllerAnimated:YES completion:nil];            
         }else{
             
             
